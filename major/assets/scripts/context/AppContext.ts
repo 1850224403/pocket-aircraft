@@ -1,4 +1,21 @@
+import { UIManager } from "../manager/UIManager";
+import { UserDataStorage } from "../data/UserDataStorage";
+import { PoolManager } from "../manager/PoolManager";
+import { ZOrderEnum } from "../const/ZOrderEnum";
+import { ResourcesManager } from "../manager/ResourcesManager";
+import { NodeNameEnum } from "../const/NodeNameEnum";
+import { ConfigManager } from "../manager/ConfigManager";
+import { GroupEnum } from "../const/GroupEnum";
+import { Util } from "../util/Util";
+import { MainAudioManager } from "../Audio/AudioManager/MainAudioManager";
+import { EffectManager } from "../manager/EffectManager";
 
+/*
+ * @Author: FeiFan Chen 
+ * @Date: 2019-12-26 15:25:19 
+ * @Last Modified by: FeiFan Chen
+ * @Last Modified time: 2020-01-02 15:09:24
+ */
 const { ccclass, property } = cc._decorator;
 
 declare global {
@@ -11,17 +28,55 @@ declare global {
 @ccclass
 export class AppContext extends cc.Component {
 
+    private _userDataStorage: UserDataStorage = null;
+    public get userDataStorage(): UserDataStorage {
+        return this._userDataStorage;
+    }
 
+    private _resourcesManager: ResourcesManager = null;
+    public get resourcesManager(): ResourcesManager {
+        return this._resourcesManager;
+    }
+
+    private _uiManager: UIManager = null;
+    public get uiManager(): UIManager {
+        return this._uiManager;
+    }
+
+    private _poolManager: PoolManager = null;
+    public get poolManager(): PoolManager {
+        return this._poolManager;
+    }
+
+    private _configManager: ConfigManager = null;
+    public get configManager(): ConfigManager {
+        return this._configManager;
+    }
+
+    private _mainAudioManager: MainAudioManager = null;
+    public get mainAudioManager(): MainAudioManager {
+        return this._mainAudioManager;
+    }
+
+    private _effectManager: EffectManager = null;
+    public get effectManager(): EffectManager {
+        return this._effectManager;
+    }
 
     public onLoad(): void {
         window.appContext = this;
         cc.game.addPersistRootNode(this.node);
 
+        this._userDataStorage = new UserDataStorage();
+        this._resourcesManager = new ResourcesManager();
+        this._configManager = new ConfigManager();
     }
 
     public enterGame(): void {
         this.initNode();
 
+        this._uiManager = new UIManager();
+        this._poolManager = new PoolManager();
     }
 
     private initNode(): void {
@@ -38,6 +93,9 @@ export class AppContext extends cc.Component {
 
         canvas.addChild(game);
         canvas.addChild(ui);
+
+        this._mainAudioManager = Util.createComp(this.node, "MainAudioManager", MainAudioManager);
+        this._effectManager = Util.createComp(this.node, 'EffectManager', EffectManager);
     }
 
 }

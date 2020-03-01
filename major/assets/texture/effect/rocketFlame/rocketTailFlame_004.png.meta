@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "c1b47683-37eb-4f3e-8928-9ff43d76cb4e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "rocketTailFlame_004": {
+      "ver": "1.0.4",
+      "uuid": "59ebb4a3-4e33-4a27-b234-868679135b2b",
+      "rawTextureUuid": "c1b47683-37eb-4f3e-8928-9ff43d76cb4e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 10,
+      "offsetY": 0,
+      "trimX": 23,
+      "trimY": 0,
+      "width": 96,
+      "height": 115,
+      "rawWidth": 122,
+      "rawHeight": 115,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

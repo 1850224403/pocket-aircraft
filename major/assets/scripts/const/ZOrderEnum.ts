@@ -1,15 +1,22 @@
 /*
- * @Author: zhicheng xiong 
- * @Date: 2020-01-20 10:19:44 
- * @Last Modified by: zhicheng xiong
- * @Last Modified time: 2020-01-20 10:20:56
+ * @Author: Feifan Chen
+ * @Date: 2019-11-11 13:58:43
+ * @Description: 层级枚举
+ * @Last Modified by: FeiFan Chen
+ * @Last Modified time: 2019-12-26 19:08:54
  */
-
-export const enum ZOrderEnum  {
+export const enum ZOrderEnum {
 
     GAME,
 
     UI,
-    
+
     PANEL,
+
+    DIALOG,
+
+    TIP,
+
+    BLOCK_INPUT
+
 }

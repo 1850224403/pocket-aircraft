@@ -1,10 +1,10 @@
 /*
- * @Author: zhicheng xiong 
- * @Date: 2020-01-19 10:32:01 
- * @Last Modified by:   zhicheng xiong 
- * @Last Modified time: 2020-01-19 10:32:01 
+ * @Author: Feifan Chen 
+ * @Date: 2019-11-09 09:58:27 
+ * @Description: UI父类
+ * @Last Modified by: Feifan Chen
+ * @Last Modified time: 2019-11-09 10:43:53
  */
-
 export enum UIType {
 
     /** 界面 */
