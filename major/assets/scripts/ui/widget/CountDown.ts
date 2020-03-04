@@ -6,7 +6,7 @@ import { AudioEnum } from "../../const/AudioEnum";
  * @Author: zhicheng xiong 
  * @Date: 2020-01-03 19:45:11 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-02-18 09:31:41
+ * @Last Modified time: 2020-03-02 00:50:15
  */
 
 const { ccclass, property } = cc._decorator;
@@ -38,24 +38,6 @@ export class CountDown extends cc.Component {
     })
     private count: cc.Sprite = null;
 
-    @property({
-        displayName: '重置按钮',
-        type: cc.Node
-    })
-    private resetBtn: cc.Node = null;
-
-    @property({
-        displayName: '返回按钮',
-        type: cc.Node
-    })
-    private returnBtn: cc.Node = null;
-
-    @property({
-        displayName: '设置按钮',
-        type: cc.Node
-    })
-    private settingBtn: cc.Node = null;
-
     private _timer: number = 0;
 
     private _picIndex: number = 0;
@@ -67,16 +49,12 @@ export class CountDown extends cc.Component {
         this.countNode.stopAllActions();
         this.levelNode.stopAllActions();
         this.unscheduleAllCallbacks();
-        this.resetBtn.active = false;
-        this.returnBtn.active = false;
-        this.settingBtn.active = false;
         this.node.active = true;
         this._timer = 0;
         this._picIndex = 3;
         this.levelNode.scaleY = 0;
         this.countDown();
         this.playLevelAnim();
-        gameContext.audioManager.playTempAudio(null, AudioEnum.COUNT_DOWN);
     }
 
     public update(dt: number): void {
@@ -101,9 +79,6 @@ export class CountDown extends cc.Component {
     }
 
     private showButton(): void {
-        this.resetBtn.active = true;
-        this.returnBtn.active = true;
-        this.settingBtn.active = true;
         this.node.active = false;
     }
 

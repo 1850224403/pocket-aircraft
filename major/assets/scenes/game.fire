@@ -315,7 +315,7 @@
       "array": [
         0,
         0,
-        272.0185846144918,
+        275.6559018819856,
         0,
         0,
         0,
@@ -346,7 +346,7 @@
       "__id__": 6
     },
     "_enabled": true,
-    "_cullingMask": -3,
+    "_cullingMask": 1,
     "_clearFlags": 6,
     "_backgroundColor": {
       "__type__": "cc.Color",

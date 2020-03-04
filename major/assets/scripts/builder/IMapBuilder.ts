@@ -7,8 +7,8 @@ import { SundriesData } from "../data/SundriesData";
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-28 14:08:40 
- * @Last Modified by: chenfeifan
- * @Last Modified time: 2020-02-10 14:58:20
+ * @Last Modified by: XiongZhiCheng
+ * @Last Modified time: 2020-03-04 00:18:33
  */
 export interface IMapBuilder {
 
@@ -21,31 +21,6 @@ export interface IMapBuilder {
     /**
      * 构建背景
      */
-    buildBackground(roadLength: number, roundCount: number): void;
-
-    /**
-     * 构建路两边的杂物
-     */
-    buildSundries(sundriesList: SundriesData[], roadLength: number, roundCount: number): void;
-
-    /**
-     * 构建起点位置
-     */
-    buildStartPos(): void;
-
-    /**
-     * 构建道路
-     */
-    buildSlope(slopeList: SlopeData[], roadLength: number, roundCount: number): void;
-
-    /**
-     * 构建路障
-     */
-    buildRoadBlock(roadBlockList: RoadBlockData[], roadLength: number, roundCount: number): void;
-
-    /**
-     * 构建道具
-     */
-    buildItems(itemList: ItemData[], roadLength: number, roundCount: number): void;
+    buildBackground(roadLength: number, id: number): void;
 
 }

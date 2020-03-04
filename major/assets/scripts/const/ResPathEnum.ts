@@ -2,7 +2,7 @@
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:29:52 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-02-18 09:33:50
+ * @Last Modified time: 2020-03-04 00:16:06
  */
 export const enum PrefabPathEnum {
 
@@ -50,7 +50,7 @@ export const enum PrefabPathEnum {
 
 export const enum FramePathEnum {
 
-    BACKGROUND = 'texture/map/background',
+    BACKGROUND = 'texture/map/background/bgLevel',
 
     SLOPE = 'texture/map/slope/slope',
 
@@ -63,8 +63,6 @@ export const enum FramePathEnum {
     ITEM_NITROGEN = 'texture/item/nitrogen',
 
     STARTLINE = 'texture/map/startLine/startLine',
-
-    ENDLINE = 'texture/map/destination',
 
     RANKING = 'texture/rankingPic/ranking',
 
@@ -100,39 +98,6 @@ export const enum FramePathEnum {
 
     BUTTON_OFF = 'texture/dialog/button_off',
 
-}
-
-export const enum AudioPathEnum {
-
-    COUNT_DOWN = 'audio/countDown',
-
-    BACKGROUND = 'audio/background',
-
-    THROTTLE = 'audio/throttle',
-
-    COIN = 'audio/coin',
-
-    COLLISION = 'audio/collision',
-
-    EXPLODE = 'audio/explode',
-
-    HORN = 'audio/horn',
-
-    MOVE = 'audio/move',
-
-    PASS_LEVEL = 'audio/passLevel',
-
-    SPEED_UP = 'audio/speedUp',
-
-    START_UP = 'audio/startUp',
-
-    START_UP_TO_MOVE = 'audio/startUpToMove',
-
-    LOW_NITROGEN = 'audio/lowNitrogen',
-
-    HIGH_NITROGEN = 'audio/highNitrogen',
-
-    HALL_MUSIC = 'audio/hallMusic',
 }
 
 export const enum SpinePathEnum {

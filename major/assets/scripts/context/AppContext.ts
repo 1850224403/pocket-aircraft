@@ -7,14 +7,14 @@ import { NodeNameEnum } from "../const/NodeNameEnum";
 import { ConfigManager } from "../manager/ConfigManager";
 import { GroupEnum } from "../const/GroupEnum";
 import { Util } from "../util/Util";
-import { MainAudioManager } from "../Audio/AudioManager/MainAudioManager";
 import { EffectManager } from "../manager/EffectManager";
+import { LogUtil } from "../util/LogUtil";
 
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 15:25:19 
- * @Last Modified by: FeiFan Chen
- * @Last Modified time: 2020-01-02 15:09:24
+ * @Last Modified by: XiongZhiCheng
+ * @Last Modified time: 2020-03-04 00:34:49
  */
 const { ccclass, property } = cc._decorator;
 
@@ -53,11 +53,6 @@ export class AppContext extends cc.Component {
         return this._configManager;
     }
 
-    private _mainAudioManager: MainAudioManager = null;
-    public get mainAudioManager(): MainAudioManager {
-        return this._mainAudioManager;
-    }
-
     private _effectManager: EffectManager = null;
     public get effectManager(): EffectManager {
         return this._effectManager;
@@ -93,8 +88,8 @@ export class AppContext extends cc.Component {
 
         canvas.addChild(game);
         canvas.addChild(ui);
+        LogUtil.log(canvas.parent.name);
 
-        this._mainAudioManager = Util.createComp(this.node, "MainAudioManager", MainAudioManager);
         this._effectManager = Util.createComp(this.node, 'EffectManager', EffectManager);
     }
 

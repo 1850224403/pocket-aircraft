@@ -8,7 +8,7 @@ import { AudioEnum } from "../const/AudioEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:39:32 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-02-18 17:05:11
+ * @Last Modified time: 2020-03-04 00:50:32
  */
 export class GameManager {
 
@@ -20,19 +20,17 @@ export class GameManager {
         this._state = GameStateEnum.IDEL;
 
         // 设置战场关卡数据
-        let battleData = gameContext.battleData;
-        let level = appContext.userDataStorage.currentLevel;
-        let levelMap = appContext.configManager.getLevelMap();
-        if (!levelMap) return;
-        let levelData = levelMap.get(level);
-        if (!levelData) return;
-        battleData.levelData = levelData;
+        // let battleData = gameContext.battleData;
+        // let level = appContext.userDataStorage.currentLevel;
+        // let levelMap = appContext.configManager.getLevelMap();
+        // if (!levelMap) return;
+        // let levelData = levelMap.get(level);
+        // if (!levelData) return;
+        // battleData.levelData = levelData;
 
         gameContext.mapManager.init();
         gameContext.roleManager.init();
         gameContext.cameraManager.init();
-        gameContext.audioManager.init();
-        gameContext.shockManager.init();
     }
 
     public gameIsEnd(): boolean {
@@ -42,7 +40,6 @@ export class GameManager {
     public gameReady(): void {
         this._state = GameStateEnum.READY;
         gameContext.roleManager.admission();
-        gameContext.audioManager.playBgMusic(AudioEnum.BACKGROUND);
     }
 
     public gamePause(): void {
@@ -58,7 +55,6 @@ export class GameManager {
 
     public startGame(): void {
         this._state = GameStateEnum.PLAY;
-        gameContext.mapManager.startPosAnim();
     }
 
     public updateSelf(dt: number): void {
@@ -115,7 +111,6 @@ export class GameManager {
     public gameOver(): void {
         this._state = GameStateEnum.END;
         let rank = gameContext.roleManager.player.data.ranking;
-        gameContext.audioManager.stopRoleAudio();
         appContext.uiManager.showUI(SettlementPanel, null, rank);
     }
 
@@ -129,7 +124,6 @@ export class GameManager {
         gameRoot.destroyAllChildren();
         gameContext.roleManager.clear();
         gameContext.cameraManager.clear();
-        gameContext.audioManager.closeAudio();
     }
 
     public restart(): void {

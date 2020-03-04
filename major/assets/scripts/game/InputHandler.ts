@@ -1,11 +1,10 @@
 import { Role } from "../entity/role/Role";
-import { AudioEnum } from "../const/AudioEnum";
 
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 14:24:50 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-02-14 11:23:55
+ * @Last Modified time: 2020-03-02 00:53:25
  */
 const { ccclass, property } = cc._decorator;
 
@@ -60,8 +59,6 @@ export class InputHandler extends cc.Component {
         this._isHold = true;
         if (this._player && this._player.node) {
             this._player.touchStart();
-        } else {
-            gameContext.audioManager.playTempAudio(null, AudioEnum.THROTTLE);
         }
         gameContext.gameManager.gameResume();
     }

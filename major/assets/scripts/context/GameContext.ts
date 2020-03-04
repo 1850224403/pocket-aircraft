@@ -5,7 +5,6 @@ import { RoleManager } from "../manager/RoleManager";
 import { GameSpawner } from "../game/GameSpawner";
 import { CameraManager } from "../manager/CameraManager";
 import { HallPanel } from "../ui/panel/HallPanel";
-import { AudioManager } from "../manager/AudioManager";
 import { ShockManager } from "../manager/ShockManager";
 
 const { ccclass, property } = cc._decorator;
@@ -50,11 +49,6 @@ export class GameContext extends cc.Component {
         return this._cameraManager;
     }
 
-    private _audioManager: AudioManager = null;
-    public get audioManager(): AudioManager {
-        return this._audioManager;
-    }
-
     private _shockManager: ShockManager = null;
     public get shockManager(): ShockManager {
         return this._shockManager;
@@ -65,25 +59,29 @@ export class GameContext extends cc.Component {
         cc.director.getCollisionManager().enabled = true;
         appContext.enterGame();
 
-        this._battleData = new BattleData();
+         this._battleData = new BattleData();
         this._gameManager = new GameManager();
+        // 
+        // 
+         this._gameSpawner = new GameSpawner();
+        this._cameraManager = new CameraManager()
+        // this._shockManager = new ShockManager();
         this._mapManager = new MapManager();
         this._roleManager = new RoleManager();
-        this._gameSpawner = new GameSpawner();
-        this._cameraManager = new CameraManager();
-        this._audioManager = new AudioManager();
-        this._shockManager = new ShockManager();
-
         appContext.uiManager.showUI(HallPanel);
+    }
+
+    public init(): void {
+        this._mapManager.init();
     }
 
     public update(dt: number): void {
         if (dt > 0.05) dt = 0.02;
-        this._gameManager.updateSelf(dt);
+        //this._gameManager.updateSelf(dt);
     }
 
     public lateUpdate(): void {
-        this._gameManager.lateUpdateSelf();
+        //this._gameManager.lateUpdateSelf();
     }
 
 }

@@ -1,12 +1,12 @@
 import { LogUtil } from "../util/LogUtil";
-import { PrefabPathEnum, FramePathEnum, AudioPathEnum, SpinePathEnum } from "../const/ResPathEnum";
+import { PrefabPathEnum, FramePathEnum, SpinePathEnum } from "../const/ResPathEnum";
 
 /*
  * @Author: FeiFan Chen
  * @Date: 2019-11-26 10:01:12
  * @Description: 资源管理
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-02-18 09:34:02
+ * @Last Modified time: 2020-03-04 00:16:19
  */
 export class ResourcesManager {
 
@@ -43,7 +43,16 @@ export class ResourcesManager {
                 PrefabPathEnum.LAND,
             ];
             let framePaths = [
-                FramePathEnum.BACKGROUND,
+                FramePathEnum.BACKGROUND + '1',
+                FramePathEnum.BACKGROUND + '2',
+                FramePathEnum.BACKGROUND + '3',
+                FramePathEnum.BACKGROUND + '4',
+                FramePathEnum.BACKGROUND + '5',
+                FramePathEnum.BACKGROUND + '6',
+                FramePathEnum.BACKGROUND + '7',
+                FramePathEnum.BACKGROUND + '8',
+                FramePathEnum.BACKGROUND + '9',
+                FramePathEnum.BACKGROUND + '10',
                 FramePathEnum.SLOPE + '01',
                 FramePathEnum.SLOPE + '02',
                 FramePathEnum.SLOPE + '03',
@@ -67,7 +76,6 @@ export class ResourcesManager {
                 FramePathEnum.STARTLINE + '4',
                 FramePathEnum.STARTLINE + '5',
                 FramePathEnum.STARTLINE + '6',
-                FramePathEnum.ENDLINE,
                 FramePathEnum.RANKING + '1',
                 FramePathEnum.RANKING + '2',
                 FramePathEnum.RANKING + '3',
@@ -113,16 +121,6 @@ export class ResourcesManager {
                 SpinePathEnum.ROLE_SKIN_5,
             ];
             let audioPaths = [
-                AudioPathEnum.COUNT_DOWN,
-                AudioPathEnum.COLLISION,
-                AudioPathEnum.BACKGROUND,
-                AudioPathEnum.HALL_MUSIC,
-                AudioPathEnum.THROTTLE,
-                AudioPathEnum.COIN,
-                AudioPathEnum.MOVE,
-                AudioPathEnum.THROTTLE,
-                AudioPathEnum.LOW_NITROGEN,
-                AudioPathEnum.HIGH_NITROGEN,
             ];
 
             function completeCall() {

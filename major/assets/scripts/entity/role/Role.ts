@@ -20,8 +20,8 @@ import { EffectPosition } from "../../const/EffectPosition";
 /*
  * @Author: FeiFan Chen 
  * @Date: 2020-01-19 16:55:30 
- * @Last Modified by: chenfeifan
- * @Last Modified time: 2020-02-19 10:39:38
+ * @Last Modified by: XiongZhiCheng
+ * @Last Modified time: 2020-03-04 00:51:58
  */
 const { ccclass, property } = cc._decorator;
 
@@ -329,16 +329,6 @@ export class Role extends cc.Component {
         if (!this._data.inGround) return;
         this._data.nitrogen = 0;
         this.nitrogen.openNitrogen(NitrogenEnum.HIGH);
-    }
-
-    public checkChangeSkin(): void {
-        if (!this._data) return;
-        let skinId = this._data.skinId;
-        let currentSkin = appContext.userDataStorage.currentSkin;
-        if (skinId != currentSkin) {
-            this._data.skinId = currentSkin;
-            this.roleAnim.changeSkin(currentSkin);
-        }
     }
 
 }

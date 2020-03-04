@@ -1,6 +1,6 @@
 {
   "ver": "2.3.3",
-  "uuid": "99dd8b95-9ced-4ed0-9f96-2bad2e6b49a0",
+  "uuid": "354c3362-929f-4143-9218-6aac8c362010",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,10 +9,10 @@
   "packable": true,
   "platformSettings": {},
   "subMetas": {
-    "button_start": {
+    "bgLevel2": {
       "ver": "1.0.4",
-      "uuid": "e9a20501-ccc7-4b60-aa94-c3b73f8448aa",
-      "rawTextureUuid": "99dd8b95-9ced-4ed0-9f96-2bad2e6b49a0",
+      "uuid": "90b80f96-ca73-44fb-bf2d-85da7f10d181",
+      "rawTextureUuid": "354c3362-929f-4143-9218-6aac8c362010",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -20,10 +20,10 @@
       "offsetY": 0,
       "trimX": 0,
       "trimY": 0,
-      "width": 175,
-      "height": 48,
-      "rawWidth": 175,
-      "rawHeight": 48,
+      "width": 512,
+      "height": 512,
+      "rawWidth": 512,
+      "rawHeight": 512,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

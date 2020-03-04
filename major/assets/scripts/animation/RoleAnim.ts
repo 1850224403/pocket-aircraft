@@ -2,13 +2,11 @@ import { RoleData } from "../data/RoleData";
 import { PrefabPathEnum } from "../const/ResPathEnum";
 import { PoolEnum } from "../const/PoolEnum";
 import { RoleAnimEnum } from "../const/RoleAnimEnum";
-import { AudioEnum } from "../const/AudioEnum";
-
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-28 17:14:57 
- * @Last Modified by: chenfeifan
- * @Last Modified time: 2020-02-12 14:19:09
+ * @Last Modified by: XiongZhiCheng
+ * @Last Modified time: 2020-03-04 00:53:00
  */
 const { ccclass, property } = cc._decorator;
 
@@ -25,25 +23,7 @@ export class RoleAnim extends cc.Component {
 
     public bindData(data: RoleData): void {
         this._roleData = data;
-        this.changeSkin(data.skinId);
     }
-
-    public changeSkin(skinId: number): void {
-        let spinePath = 'spine/skin' + skinId + '/skeleton';
-        let spineData = appContext.resourcesManager.getSpine(spinePath);
-        if (!spineData) return;
-        this.spineAnim.skeletonData = spineData;
-        this.spineAnim.setMix(RoleAnimEnum.QI_DONG_1, RoleAnimEnum.DAI_JI, 0.3);
-        this.spineAnim.setMix(RoleAnimEnum.QI_DONG_1, RoleAnimEnum.YI_DONG, 0.3);
-        this.spineAnim.setMix(RoleAnimEnum.YI_DONG, RoleAnimEnum.DAI_JI, 0.3);
-        this.spineAnim.setMix(RoleAnimEnum.DAI_JI, RoleAnimEnum.JIA_SU_YI_DONG, 0.3);
-        this.spineAnim.setMix(RoleAnimEnum.YI_DONG, RoleAnimEnum.JIA_SU_YI_DONG, 0.3);
-        this.spineAnim.setMix(RoleAnimEnum.QI_DONG_1, RoleAnimEnum.JIA_SU_YI_DONG, 0.3);
-        this.spineAnim.setMix(RoleAnimEnum.QI_DONG_2, RoleAnimEnum.JIA_SU_YI_DONG, 0.3);
-        this.spineAnim.setMix(RoleAnimEnum.JIA_SU_YI_DONG, RoleAnimEnum.DAI_JI, 0.3);
-        this.spineAnim.setMix(RoleAnimEnum.JIA_SU_YI_DONG, RoleAnimEnum.QI_DONG_2, 0.3);
-    }
-
     public updateSelf(dt: number): void {
         if (!this._roleData) return;
         this.updateAnim();
@@ -81,18 +61,12 @@ export class RoleAnim extends cc.Component {
                 this.spineAnim.setAnimation(0, anim, true);
                 this.spineAnim.timeScale = 0.6;
                 this.spineAnim.setCompleteListener(null);
-                if (this._roleData.id === 1) {
-                    gameContext.audioManager.stopRoleAudio();
-                }
                 break;
 
             case RoleAnimEnum.QI_DONG_1:
                 this.spineAnim.setAnimation(0, anim, false);
                 this.spineAnim.timeScale = 1;
                 this.spineAnim.setCompleteListener(null);
-                if (this._roleData.id === 1) {
-                    gameContext.audioManager.playRoleAudio(AudioEnum.MOVE, true);
-                }
                 break;
 
             case RoleAnimEnum.QI_DONG_2:

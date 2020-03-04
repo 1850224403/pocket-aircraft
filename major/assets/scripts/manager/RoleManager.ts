@@ -12,8 +12,8 @@ import { UpgradeEnum } from "../const/UpgradeEnum";
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:52:51 
- * @Last Modified by: chenfeifan
- * @Last Modified time: 2020-02-14 16:44:55
+ * @Last Modified by: XiongZhiCheng
+ * @Last Modified time: 2020-03-04 00:48:31
  */
 export class RoleManager {
 
@@ -85,7 +85,7 @@ export class RoleManager {
         roleData.roadY = 28;
         roleData.rolePropertyLevel = userStorage.propertyLevel;
         let x = 200;
-        let y = gameContext.mapManager.getRoleY(x, roleData.roadY);
+        let y = 200;
         roleData.pos = cc.v2(x, y);
         // 创建玩家
         let player = gameContext.gameSpawner.spawnRole(roleData.pos);
@@ -116,7 +116,7 @@ export class RoleManager {
         roleData.lowNitrogenAddSpeed = 300;
         roleData.roadY = 28 + 67 * (i - 1);
         let x = 0;
-        let y = gameContext.mapManager.getRoleY(x, roleData.roadY);
+        let y = 200;
         roleData.pos = cc.v2(x, y);
         // 生成敌人
         let enemy = gameContext.gameSpawner.spawnRole(roleData.pos);
