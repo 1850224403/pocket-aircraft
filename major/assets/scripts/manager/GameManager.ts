@@ -8,7 +8,7 @@ import { AudioEnum } from "../const/AudioEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:39:32 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-04 00:50:32
+ * @Last Modified time: 2020-03-05 00:44:09
  */
 export class GameManager {
 
@@ -39,7 +39,6 @@ export class GameManager {
 
     public gameReady(): void {
         this._state = GameStateEnum.READY;
-        gameContext.roleManager.admission();
     }
 
     public gamePause(): void {

@@ -2,7 +2,9 @@
   "start-scene": "dfccfb8a-4094-4b86-bc01-0780fc3e925b",
   "group-list": [
     "default",
-    "game"
+    "game",
+    "enemy",
+    "player"
   ],
   "collision-matrix": [
     [
@@ -10,6 +12,19 @@
     ],
     [
       false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      true
+    ],
+    [
+      false,
+      false,
+      true,
       false
     ]
   ],

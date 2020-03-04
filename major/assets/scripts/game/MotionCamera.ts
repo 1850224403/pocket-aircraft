@@ -5,7 +5,7 @@ import { MotionCameraData } from "../data/MotionCameraData";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 17:05:10 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-04 00:58:23
+ * @Last Modified time: 2020-03-05 00:21:47
  */
 const { ccclass, property } = cc._decorator;
 

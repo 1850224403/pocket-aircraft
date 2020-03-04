@@ -12,8 +12,8 @@ import { Util } from "../util/Util";
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:12:43 
- * @Last Modified by: chenfeifan
- * @Last Modified time: 2020-02-15 11:04:28
+ * @Last Modified by: XiongZhiCheng
+ * @Last Modified time: 2020-03-05 00:22:11
  */
 export class GameSpawner {
 
@@ -41,18 +41,6 @@ export class GameSpawner {
         this._gameRoot.addChild(roleNode);
         let roleComp = roleNode.getComponent(Role);
         return roleComp;
-    }
-
-    public spawnRoleShadow(pos: cc.Vec2): RoleShadow {
-        let shadowPrefab = appContext.resourcesManager.getPrefab(PrefabPathEnum.ROLE_SHADOW);
-        if (!shadowPrefab) return;
-        let shadowNode = appContext.poolManager.get(PoolEnum.ROLE_SHADOW, shadowPrefab);
-        shadowNode.position = pos;
-        shadowNode.zIndex = GameEntityZOrderEnum.ROLE_SHADOW;
-        this._gameRoot.addChild(shadowNode);
-        if (!shadowNode) return;
-        let roleShadow = shadowNode.getComponent(RoleShadow);
-        return roleShadow;
     }
 
     public spawnPlayerArrow(pos: cc.Vec2): PlayerArrow {
@@ -83,7 +71,7 @@ export class GameSpawner {
             if (!fireRocketNode) continue;
             let x = userX + 1500;
             fireRocketNode.x = x;
-            fireRocketNode.y = gameContext.mapManager.getY(x, roadY);
+            fireRocketNode.y = 2;
             fireRocketNode.zIndex = -roadY;
             this._gameRoot.addChild(fireRocketNode);
             let fireRocket = fireRocketNode.getComponent(FireRocket);

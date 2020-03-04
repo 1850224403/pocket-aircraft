@@ -59,11 +59,11 @@ export class GameContext extends cc.Component {
         cc.director.getCollisionManager().enabled = true;
         appContext.enterGame();
 
-         this._battleData = new BattleData();
+        this._battleData = new BattleData();
         this._gameManager = new GameManager();
         // 
         // 
-         this._gameSpawner = new GameSpawner();
+        this._gameSpawner = new GameSpawner();
         this._cameraManager = new CameraManager()
         // this._shockManager = new ShockManager();
         this._mapManager = new MapManager();
@@ -77,7 +77,7 @@ export class GameContext extends cc.Component {
 
     public update(dt: number): void {
         if (dt > 0.05) dt = 0.02;
-        //this._gameManager.updateSelf(dt);
+        this._gameManager.updateSelf(dt);
     }
 
     public lateUpdate(): void {

@@ -6,7 +6,7 @@ import { PrefabPathEnum, FramePathEnum, SpinePathEnum } from "../const/ResPathEn
  * @Date: 2019-11-26 10:01:12
  * @Description: 资源管理
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-04 00:16:19
+ * @Last Modified time: 2020-03-05 00:16:40
  */
 export class ResourcesManager {
 
@@ -27,20 +27,10 @@ export class ResourcesManager {
 
             let prefabPaths = [
                 PrefabPathEnum.ROLE,
-                PrefabPathEnum.ROLE_SHADOW,
-                PrefabPathEnum.ENEMY_ARROW,
                 PrefabPathEnum.HALL_PANEL,
-                PrefabPathEnum.ITEM_GOLD,
-                PrefabPathEnum.ITEM_ROCKET,
-                PrefabPathEnum.ITEM_NITROGEN,
-                PrefabPathEnum.ITEM_INVINCIBLE,
                 PrefabPathEnum.COIN,
                 PrefabPathEnum.FIRE_ROCKET,
-                PrefabPathEnum.MAP_PROGRESS_EFFECT,
-                PrefabPathEnum.SAND,
                 PrefabPathEnum.EXPLOSION,
-                PrefabPathEnum.PLAYER_ARROW,
-                PrefabPathEnum.LAND,
             ];
             let framePaths = [
                 FramePathEnum.BACKGROUND + '1',
@@ -114,11 +104,6 @@ export class ResourcesManager {
                 FramePathEnum.BUTTON_ON,
             ];
             let spinePaths = [
-                SpinePathEnum.ROLE_SKIN_1,
-                SpinePathEnum.ROLE_SKIN_2,
-                SpinePathEnum.ROLE_SKIN_3,
-                SpinePathEnum.ROLE_SKIN_4,
-                SpinePathEnum.ROLE_SKIN_5,
             ];
             let audioPaths = [
             ];

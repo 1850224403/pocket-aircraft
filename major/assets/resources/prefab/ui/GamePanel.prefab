@@ -871,6 +871,9 @@
     },
     "_enabled": true,
     "uiType": 0,
+    "inputHandler": {
+      "__id__": 3
+    },
     "_id": ""
   },
   {

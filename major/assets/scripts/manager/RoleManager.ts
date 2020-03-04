@@ -13,7 +13,7 @@ import { UpgradeEnum } from "../const/UpgradeEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:52:51 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-04 00:48:31
+ * @Last Modified time: 2020-03-05 00:13:29
  */
 export class RoleManager {
 
@@ -67,20 +67,12 @@ export class RoleManager {
 
     }
 
-    public admission(): void {
-        this._roleList.forEach((key, role) => {
-            role && role.admission();
-        });
-    }
-
     private createPlayer(): void {
         // 玩家属性等级数据
         let userStorage = appContext.userDataStorage;
-        let currentSkin = userStorage.currentSkin;
         // 初始化玩家数据
         let roleData = new RoleData();
         roleData.id = 1;
-        roleData.skinId = currentSkin;
         roleData.maxA = 24;
         roleData.roadY = 28;
         roleData.rolePropertyLevel = userStorage.propertyLevel;
@@ -90,10 +82,6 @@ export class RoleManager {
         // 创建玩家
         let player = gameContext.gameSpawner.spawnRole(roleData.pos);
         if (!player) return;
-        let shadow = gameContext.gameSpawner.spawnRoleShadow(roleData.pos);
-        shadow && shadow.bindData(roleData);
-        let playerArrow = gameContext.gameSpawner.spawnPlayerArrow(roleData.pos);
-        playerArrow && playerArrow.bindData(roleData);
         player.bindData(roleData);
         gameContext.battleData.playerData = roleData;
         this._player = player;

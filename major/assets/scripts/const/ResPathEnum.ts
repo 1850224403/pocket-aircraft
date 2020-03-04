@@ -2,7 +2,7 @@
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:29:52 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-04 00:16:06
+ * @Last Modified time: 2020-03-05 00:16:49
  */
 export const enum PrefabPathEnum {
 
@@ -19,18 +19,6 @@ export const enum PrefabPathEnum {
     SETTING_DIALOG = 'prefab/ui/SettingDialog',
 
     ROLE = 'prefab/entity/Role',
-
-    ROLE_SHADOW = 'prefab/entity/RoleShadow',
-
-    ENEMY_ARROW = 'prefab/entity/EnemyArrow',
-
-    ITEM_GOLD = 'prefab/entity/item/Gold',
-
-    ITEM_ROCKET = 'prefab/entity/item/Rocket',
-
-    ITEM_NITROGEN = 'prefab/entity/item/Nitrogen',
-
-    ITEM_INVINCIBLE = 'prefab/entity/item/Invincible',
 
     COIN = 'prefab/entity/Coin',
 
@@ -97,19 +85,5 @@ export const enum FramePathEnum {
     BUTTON_ON = 'texture/dialog/button_on',
 
     BUTTON_OFF = 'texture/dialog/button_off',
-
-}
-
-export const enum SpinePathEnum {
-
-    ROLE_SKIN_1 = 'spine/skin1/skeleton',
-
-    ROLE_SKIN_2 = 'spine/skin2/skeleton',
-
-    ROLE_SKIN_3 = 'spine/skin3/skeleton',
-
-    ROLE_SKIN_4 = 'spine/skin4/skeleton',
-
-    ROLE_SKIN_5 = 'spine/skin5/skeleton',
 
 }
