@@ -1,12 +1,15 @@
 import { MapBuilder } from "../builder/MapBuilder";
 import { LogUtil } from "../util/LogUtil";
 import { MapData } from "../data/MapData";
+import { BackgroundContainer } from "../Container/BackgroundContainer";
+import { GameZOrderEnum } from "../const/ZOrderEnum";
+import { NodeNameEnum } from "../const/NodeNameEnum";
 
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:36:30 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-04 00:19:33
+ * @Last Modified time: 2020-03-06 00:07:40
  */
 const { ccclass, property } = cc._decorator;
 
@@ -15,11 +18,19 @@ export class MapManager {
 
     private _data: MapData = null;
 
-    private _roundCount: number = 1;
-
-    private _mapBuilder: MapBuilder = new MapBuilder();
+    private _backgroundContainer: BackgroundContainer = null;
+    public get backgroundContainer(): BackgroundContainer {
+        return this._backgroundContainer;
+    }
 
     public init(): void {
+        let canvas = cc.Canvas.instance.node;
+        let gameRoot = canvas.getChildByName(NodeNameEnum.GAME_ROOT);
+        if (!gameRoot) {
+            LogUtil.err('can not find game root in canvas');
+            return;
+        }
+
         let currentLevel = appContext.userDataStorage.currentLevel;
         let a = Math.ceil(currentLevel / 3);
         let id = a;
@@ -31,11 +42,22 @@ export class MapManager {
             return;
         }
         this._data = mapData;
-        this._mapBuilder.build(mapData);
+
+        let backgroundContainerNode = new cc.Node('BackgroundContainer');
+        let backgroundContainer = backgroundContainerNode.addComponent(BackgroundContainer);
+        backgroundContainerNode.zIndex = GameZOrderEnum.BACKGROUND;
+
+        gameRoot.addChild(backgroundContainerNode);
+
+        this._backgroundContainer = backgroundContainer;
+
+        this._backgroundContainer.bindData(this._data);
+
+        this._backgroundContainer.build();
     }
 
     public updateSelf(dt: number): void {
-        // ...
+        this._backgroundContainer && this._backgroundContainer.updateSelf(dt);
     }
 
 }
