@@ -2,7 +2,7 @@
  * @Author: zhicheng xiong 
  * @Date: 2020-01-04 10:41:27 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-08 23:40:32
+ * @Last Modified time: 2020-03-08 23:43:52
  */
 import { BaseUI } from "../BaseUI";
 import { PrefabPathEnum, FramePathEnum } from "../../const/ResPathEnum";
@@ -27,13 +27,7 @@ export class SettlementPanel extends BaseUI {
     private reset: cc.Node = null;
 
     @property({
-        displayName: '奖励金币',
-        type: CoinsAward,
-    })
-    private coinsAward: CoinsAward = null;
-
-    @property({
-        displayName: '按钮',
+        displayName: '返回按钮',
         type: cc.Node
     })
     private backBtn: cc.Node = null;
