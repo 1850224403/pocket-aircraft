@@ -14,7 +14,7 @@ import { LogUtil } from "../util/LogUtil";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 15:25:19 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-04 00:34:49
+ * @Last Modified time: 2020-03-06 00:38:18
  */
 const { ccclass, property } = cc._decorator;
 
@@ -81,14 +81,13 @@ export class AppContext extends cc.Component {
         game.group = GroupEnum.GAME;
         game.zIndex = ZOrderEnum.GAME;
         // 让游戏节点的位置在屏幕左侧，方便构建地图
-        game.x = -canvas.width / 2;
+        game.y = -canvas.height / 2;
 
         let ui = new cc.Node(NodeNameEnum.UI_ROOT);
         ui.zIndex = ZOrderEnum.UI;
 
         canvas.addChild(game);
         canvas.addChild(ui);
-        LogUtil.log(canvas.parent.name);
 
         this._effectManager = Util.createComp(this.node, 'EffectManager', EffectManager);
     }

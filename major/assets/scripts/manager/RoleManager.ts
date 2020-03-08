@@ -13,7 +13,7 @@ import { UpgradeEnum } from "../const/UpgradeEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:52:51 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-05 00:13:29
+ * @Last Modified time: 2020-03-06 00:25:53
  */
 export class RoleManager {
 
@@ -76,8 +76,8 @@ export class RoleManager {
         roleData.maxA = 24;
         roleData.roadY = 28;
         roleData.rolePropertyLevel = userStorage.propertyLevel;
-        let x = 200;
-        let y = 200;
+        let x = 0;
+        let y = 0;
         roleData.pos = cc.v2(x, y);
         // 创建玩家
         let player = gameContext.gameSpawner.spawnRole(roleData.pos);
@@ -109,8 +109,6 @@ export class RoleManager {
         // 生成敌人
         let enemy = gameContext.gameSpawner.spawnRole(roleData.pos);
         if (!enemy) return;
-        let shadow = gameContext.gameSpawner.spawnRoleShadow(roleData.pos);
-        shadow && shadow.bindData(roleData);
         enemy.bindData(roleData);
         this._roleList.add(enemy);
 

@@ -8,12 +8,13 @@ import { Role } from "../entity/role/Role";
 import { RoleShadow } from "../entity/role/RoleShadow";
 import { ConstValue } from "../const/ConstValue";
 import { Util } from "../util/Util";
+import { LogUtil } from "../util/LogUtil";
 
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:12:43 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-05 00:22:11
+ * @Last Modified time: 2020-03-06 00:32:52
  */
 export class GameSpawner {
 
@@ -39,6 +40,7 @@ export class GameSpawner {
         if (!roleNode) return null;
         roleNode.position = pos;
         this._gameRoot.addChild(roleNode);
+        LogUtil.log(this._gameRoot.position, roleNode.position);
         let roleComp = roleNode.getComponent(Role);
         return roleComp;
     }
