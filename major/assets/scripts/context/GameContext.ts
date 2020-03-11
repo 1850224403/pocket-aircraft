@@ -67,14 +67,12 @@ export class GameContext extends cc.Component {
 
         this._battleData = new BattleData();
         this._gameManager = new GameManager();
-        // 
-        // 
         this._gameSpawner = new GameSpawner();
         this._cameraManager = new CameraManager()
-        // this._shockManager = new ShockManager();
         this._mapManager = new MapManager();
         this._roleManager = new RoleManager();
         this._bulletManager = new BulletManager();
+
         appContext.uiManager.showUI(HallPanel);
     }
 
@@ -88,7 +86,7 @@ export class GameContext extends cc.Component {
     }
 
     public lateUpdate(): void {
-        //this._gameManager.lateUpdateSelf();
+        this._gameManager.lateUpdateSelf();
     }
 
 }

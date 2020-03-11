@@ -8,8 +8,8 @@ import { LevelData } from "../data/LevelData";
  * @Author: Feifan Chen 
  * @Date: 2019-11-11 18:50:09 
  * @Description: 配置管理 
- * @Last Modified by: FeiFan Chen
- * @Last Modified time: 2020-01-04 14:01:50
+ * @Last Modified by: XiongZhiCheng
+ * @Last Modified time: 2020-03-12 00:16:32
  */
 export class ConfigManager {
 

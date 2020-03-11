@@ -6,7 +6,7 @@ import { PrefabPathEnum, FramePathEnum } from "../const/ResPathEnum";
  * @Date: 2019-11-26 10:01:12
  * @Description: 资源管理
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-11 00:31:32
+ * @Last Modified time: 2020-03-12 00:21:36
  */
 export class ResourcesManager {
 
@@ -23,15 +23,13 @@ export class ResourcesManager {
     public preloadRes(): Promise<any> {
         let self = this;
         return new Promise(function (resolve, reject) {
-            let loadTypeCount = 4;
+            let loadTypeCount = 3;
 
             let prefabPaths = [
                 PrefabPathEnum.ROLE,
-                PrefabPathEnum.ENEMY,
-                PrefabPathEnum.HALL_PANEL,
-                PrefabPathEnum.COIN,
-                PrefabPathEnum.EXPLOSION,
+                PrefabPathEnum.ENEMY + '01',
                 PrefabPathEnum.BULLET + '01',
+                PrefabPathEnum.COIN,
             ];
             let framePaths = [
                 FramePathEnum.BACKGROUND + '1',
@@ -44,43 +42,10 @@ export class ResourcesManager {
                 FramePathEnum.BACKGROUND + '8',
                 FramePathEnum.BACKGROUND + '9',
                 FramePathEnum.BACKGROUND + '10',
-                FramePathEnum.SLOPE + '01',
-                FramePathEnum.SLOPE + '02',
-                FramePathEnum.SLOPE + '03',
-                FramePathEnum.SLOPE + '04',
-                FramePathEnum.SLOPE + '05',
-                FramePathEnum.SLOPE + '06',
-                FramePathEnum.SLOPE + '07',
                 FramePathEnum.COUNTDOWN + '0',
                 FramePathEnum.COUNTDOWN + '1',
                 FramePathEnum.COUNTDOWN + '2',
                 FramePathEnum.COUNTDOWN + '3',
-                FramePathEnum.TROPHY_RANK_NUM + '02',
-                FramePathEnum.TROPHY_RANK_NUM + '03',
-                FramePathEnum.TROPHY_RANK_NUM + '04',
-                FramePathEnum.TROPHY_RANK_NUM + '05',
-                FramePathEnum.ITEM_ROCKET,
-                FramePathEnum.ITEM_NITROGEN,
-                FramePathEnum.STARTLINE + '1',
-                FramePathEnum.STARTLINE + '2',
-                FramePathEnum.STARTLINE + '3',
-                FramePathEnum.STARTLINE + '4',
-                FramePathEnum.STARTLINE + '5',
-                FramePathEnum.STARTLINE + '6',
-                FramePathEnum.RANKING + '1',
-                FramePathEnum.RANKING + '2',
-                FramePathEnum.RANKING + '3',
-                FramePathEnum.RANKING + '4',
-                FramePathEnum.RANKING + '5',
-                FramePathEnum.COCONUT,
-                FramePathEnum.HIGH_ROADBLOCK,
-                FramePathEnum.LOW_ROADBLOCK,
-                FramePathEnum.UMBRELLA,
-                FramePathEnum.WHEEL,
-                FramePathEnum.SQUARE_ONE,
-                FramePathEnum.SQUARE_TWO,
-                FramePathEnum.RED_ROADSIGN,
-                FramePathEnum.GREEN_ROADSIGN,
                 FramePathEnum.PIC_NUMBER + '0',
                 FramePathEnum.PIC_NUMBER + '1',
                 FramePathEnum.PIC_NUMBER + '2',
@@ -97,14 +62,6 @@ export class ResourcesManager {
                 FramePathEnum.PIC_NUMBER + 'b',
                 FramePathEnum.PIC_NUMBER + 't',
                 FramePathEnum.PIC_NUMBER + 'line',
-                FramePathEnum.LANDING_TIP,
-                FramePathEnum.START_PROMPT,
-                FramePathEnum.LAND_PROMPT,
-                FramePathEnum.BARRAGE_BACKGROUND,
-                FramePathEnum.BUTTON_OFF,
-                FramePathEnum.BUTTON_ON,
-            ];
-            let spinePaths = [
             ];
             let audioPaths = [
             ];
@@ -160,21 +117,6 @@ export class ResourcesManager {
                 completeCall();
             };
             cc.loader.loadResArray(audioPaths, cc.AudioClip, audioCall);
-
-            let spineCall = (e: Error, resArray: sp.SkeletonData[]) => {
-                if (e) {
-                    LogUtil.err(e);
-                    reject();
-                    return;
-                }
-                for (let i = 0; i < resArray.length; i++) {
-                    const res = resArray[i];
-                    const path = spinePaths[i];
-                    self._spineMap.set(path, res);
-                }
-                completeCall();
-            };
-            cc.loader.loadResArray(spinePaths, sp.SkeletonData, spineCall);
         });
     }
 

@@ -13,7 +13,7 @@ import { UpgradeEnum } from "../const/UpgradeEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:52:51 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-11 23:15:18
+ * @Last Modified time: 2020-03-11 23:40:07
  */
 export class RoleManager {
 
@@ -78,7 +78,7 @@ export class RoleManager {
         let y = 0;
         roleData.pos = cc.v2(x, y);
         // 创建玩家
-        let player = gameContext.gameSpawner.spawnRole(roleData.pos);
+        let player = gameContext.gameSpawner.spawnPlayer(roleData.pos);
         if (!player) return;
         player.bindData(roleData);
         gameContext.battleData.playerData = roleData;
@@ -90,22 +90,14 @@ export class RoleManager {
         // 创建敌人数据
         let levelData = gameContext.battleData.levelData;
         if (!levelData) return;
-        let aiConfig = levelData.aiConfig;
-        if (!aiConfig) return;
         let roleData = new RoleData();
         roleData.id = i;
-        roleData.skinId = Util.getRandomInt(RoleSkinEnum.SKIN_1, RoleSkinEnum.SKIN_5 + 1);
-        roleData.aa = Util.getRandomInt(aiConfig.minAcceleratedSpeed, aiConfig.maxAcceleratedSpeed);
-        roleData.maxA = 24;
-        roleData.maxSpeed = Util.getRandomInt(aiConfig.minSpeed, aiConfig.maxSpeed);
-        roleData.moveYValue = 200;
-        roleData.lowNitrogenAddSpeed = 300;
-        roleData.roadY = 28 + 67 * (i - 1);
-        let x = 0;
+        let x = -250 + i * 50;
         let y = 200;
         roleData.pos = cc.v2(x, y);
+        roleData.id = 1;
         // 生成敌人
-        let enemy = gameContext.gameSpawner.spawnRole(roleData.pos);
+        let enemy = gameContext.gameSpawner.spawnEnemy(roleData);
         if (!enemy) return;
         enemy.bindData(roleData);
         this._roleList.add(enemy);

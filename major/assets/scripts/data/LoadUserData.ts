@@ -2,13 +2,14 @@ import { WorldEventManager } from "../../gamecommon/Script/GameCommon/WorldEvent
 import { WorldEventType } from "../../gamecommon/Script/GameCommon/WorldEventType";
 import { UserData } from "../../gamecommon/Script/GameCommon/UserData";
 import { MoreGameManager } from "../../gamecommon/Script/MoreGame/MoreGameManager";
+import { LogUtil } from "../util/LogUtil";
 
 /*
  * @Author: Feifan Chen
  * @Date: 2019-11-13 14:07:47
  * @Description: 等待用户数据
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-02-15 15:51:04
+ * @Last Modified time: 2020-03-12 00:05:35
  */
 const { ccclass, property } = cc._decorator;
 
@@ -43,6 +44,7 @@ export class LoadUserData extends cc.Component {
         MoreGameManager.initHorizontalConfig();
         //MoreGameManager.initPartMoreGameConfig();
         WorldEventManager.triggerEvent(WorldEventType.GetUserDataFinish, null);
+        LogUtil.log('数据加载完成');
         appContext.userDataStorage.init();
         this.node.active = false;
     }

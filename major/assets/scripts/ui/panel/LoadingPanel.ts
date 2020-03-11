@@ -6,8 +6,8 @@ import { LogUtil } from "../../util/LogUtil";
  * @Author: FeiFan Chen 
  * @Date: 2019-11-25 19:10:02 
  * @Description: 加载界面
- * @Last Modified by: FeiFan Chen
- * @Last Modified time: 2020-01-02 14:17:16
+ * @Last Modified by: XiongZhiCheng
+ * @Last Modified time: 2020-03-12 00:06:32
  */
 const { ccclass, property } = cc._decorator;
 
@@ -89,8 +89,10 @@ export class LoadingPanel extends cc.Component {
 
     private addLoadCount(): void {
         this._loadedCount++;
+        LogUtil.log('加1');
         if (this._loadedCount >= this._totalLoadCount) {
             this._loadingComplete = true;
+            LogUtil.log('完成');
         }
     }
 

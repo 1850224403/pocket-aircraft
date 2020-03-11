@@ -2,11 +2,13 @@
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:37:30 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-09 00:25:38
+ * @Last Modified time: 2020-03-11 00:10:13
  */
 export const enum PoolEnum {
 
     ROLE = 'role',
+
+    ENEMY = 'enemy',
 
     ROLE_SHADOW = 'role_shadow',
 
