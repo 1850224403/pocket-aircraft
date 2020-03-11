@@ -9,7 +9,7 @@ import { RoleData } from "../data/RoleData";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:12:43 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-11 23:39:59
+ * @Last Modified time: 2020-03-12 00:33:10
  */
 export class GameSpawner {
 
@@ -43,11 +43,11 @@ export class GameSpawner {
     public spawnEnemy(roleData: RoleData): Role {
         if (!this._gameRoot) return null;
         let resMgr = appContext.resourcesManager;
-        let path = roleData.id < 10 ? '0' + roleData.id : roleData.id;
-        let rolePrefab = resMgr.getPrefab(PrefabPathEnum.ROLE + path);
+        let path = roleData.skinId < 10 ? '0' + roleData.skinId : roleData.skinId;
+        let rolePrefab = resMgr.getPrefab(PrefabPathEnum.ENEMY + path);
         if (!rolePrefab) return null;
         let poolMgr = appContext.poolManager;
-        let roleNode = poolMgr.get(PoolEnum.ROLE, rolePrefab);
+        let roleNode = poolMgr.get(PoolEnum.ENEMY, rolePrefab);
         if (!roleNode) return null;
         roleNode.position = roleData.pos;
         roleNode.zIndex = GameZOrderEnum.ROLE;
@@ -61,15 +61,6 @@ export class GameSpawner {
     }
 
     public spawnLandEffect(pos: cc.Vec2, roadY: number): void {
-        if (!this._gameRoot) return;
-        let resMgr = appContext.resourcesManager;
-        let landPrefab = resMgr.getPrefab(PrefabPathEnum.LAND);
-        if (!landPrefab) return;
-        let landNode = appContext.poolManager.get(PoolEnum.LAND, landPrefab);
-        if (!landNode) return;
-        landNode.position = pos;
-        landNode.zIndex = -roadY;
-        this._gameRoot.addChild(landNode);
     }
 
 }

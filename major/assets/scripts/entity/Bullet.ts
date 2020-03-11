@@ -14,9 +14,9 @@ export class Bullet extends cc.Component {
     }
 
     public onCollisionEnter(other: cc.Collider, self: cc.Collider): void {
-        if(other.tag === 5) {
+        if (other.tag === 5) {
             LogUtil.log('打到');
-            other.destroy();
+            other.node.parent.destroy();
             this.destroySelf();
         }
 

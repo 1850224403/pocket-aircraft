@@ -13,7 +13,7 @@ import { UpgradeEnum } from "../const/UpgradeEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:52:51 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-11 23:40:07
+ * @Last Modified time: 2020-03-12 00:32:47
  */
 export class RoleManager {
 
@@ -88,36 +88,17 @@ export class RoleManager {
 
     private createEnemy(i: number): void {
         // 创建敌人数据
-        let levelData = gameContext.battleData.levelData;
-        if (!levelData) return;
         let roleData = new RoleData();
         roleData.id = i;
         let x = -250 + i * 50;
         let y = 200;
         roleData.pos = cc.v2(x, y);
-        roleData.id = 1;
+        roleData.skinId = 1;
         // 生成敌人
         let enemy = gameContext.gameSpawner.spawnEnemy(roleData);
         if (!enemy) return;
         enemy.bindData(roleData);
         this._roleList.add(enemy);
-
-        let level = appContext.userDataStorage.currentLevel;
-        let delayStart = Util.getRandomFloat(0, 0.5);
-        let ai: AI = null;
-        let aiLevel: AILevelEnum = AILevelEnum.LOW;
-        if (level <= 3) {
-            ai = new LowAI();
-            aiLevel = AILevelEnum.LOW;
-        } else if (level <= 15) {
-            ai = new MiddleAI();
-            aiLevel = AILevelEnum.MIDDLE;
-        } else {
-            ai = new HighAI();
-            aiLevel = AILevelEnum.HIGH;
-        }
-        ai.bindData(aiLevel, enemy, delayStart);
-        this._aiList.add(ai);
     }
 
     public clear(): void {

@@ -4,7 +4,7 @@ import { RoleData } from "../../data/RoleData";
  * @Author: FeiFan Chen 
  * @Date: 2020-01-19 16:55:30 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-09 00:39:22
+ * @Last Modified time: 2020-03-12 00:34:34
  */
 const { ccclass, property } = cc._decorator;
 
@@ -52,10 +52,12 @@ export class Role extends cc.Component {
     }
 
     public updateSelf(dt: number): void {
-        this._timer += dt;
-        if (this._timer > FIREDELAY) {
-            this.fire();
-            this._timer = 0;
+        if (this._data.isPlayer) {
+            this._timer += dt;
+            if (this._timer > FIREDELAY) {
+                this.fire();
+                this._timer = 0;
+            }
         }
 
         let x = cc.misc.lerp(this.node.position.x, this._data.pos.x, 50 * dt);
@@ -77,7 +79,7 @@ export class Role extends cc.Component {
     }
 
     private fire(): void {
-        gameContext.bulletManager.createBullet(this.node);
+        gameContext.bulletManager.createBullet(this.node.position);
     }
 
     public touchEnd(): void {
@@ -86,4 +88,7 @@ export class Role extends cc.Component {
         this._data.isSpeedUp = false;
     }
 
+    public destroySelf(): void {
+        this.node.destroy();
+    }
 }
