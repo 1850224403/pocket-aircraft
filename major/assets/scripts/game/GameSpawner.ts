@@ -1,20 +1,18 @@
 import { NodeNameEnum } from "../const/NodeNameEnum";
 import { PrefabPathEnum } from "../const/ResPathEnum";
 import { PoolEnum } from "../const/PoolEnum";
-import { FireRocket } from "../entity/FireRocket";
-import { GameEntityZOrderEnum } from "../const/GameEntityZOrderEnum";
-import { PlayerArrow } from "../entity/PlayerArrow";
 import { Role } from "../entity/role/Role";
 import { RoleShadow } from "../entity/role/RoleShadow";
 import { ConstValue } from "../const/ConstValue";
 import { Util } from "../util/Util";
 import { LogUtil } from "../util/LogUtil";
+import { GameZOrderEnum } from "../const/ZOrderEnum";
 
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:12:43 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-06 00:32:52
+ * @Last Modified time: 2020-03-11 23:15:13
  */
 export class GameSpawner {
 
@@ -39,48 +37,14 @@ export class GameSpawner {
         let roleNode = poolMgr.get(PoolEnum.ROLE, rolePrefab);
         if (!roleNode) return null;
         roleNode.position = pos;
+        roleNode.zIndex = GameZOrderEnum.ROLE;
         this._gameRoot.addChild(roleNode);
-        LogUtil.log(this._gameRoot.position, roleNode.position);
         let roleComp = roleNode.getComponent(Role);
         return roleComp;
     }
 
-    public spawnPlayerArrow(pos: cc.Vec2): PlayerArrow {
-        if (!this._gameRoot) return;
-        let arrowPrefab = appContext.resourcesManager.getPrefab(PrefabPathEnum.PLAYER_ARROW);
-        if (!arrowPrefab) return;
-        let arrowNode = appContext.poolManager.get(PoolEnum.PLAYER_ARROW, arrowPrefab);
-        if (!arrowNode) return;
-        arrowNode.position = pos;
-        this._gameRoot.addChild(arrowNode);
-        let arrowComp = arrowNode.getComponent(PlayerArrow);
-        return arrowComp;
-    }
-
     public spawnFireRocket(userX: number, attackerId: number, roadNo: number): void {
-        if (!this._gameRoot) return;
-        let resMgr = appContext.resourcesManager;
-        let rocketPrefab = resMgr.getPrefab(PrefabPathEnum.FIRE_ROCKET);
-        if (!rocketPrefab) return;
-        let roadYArray = [].concat(ConstValue.ROAD_Y);
-        roadYArray.splice(roadNo - 1, 1);
-        let rocketCount = 2;
-        for (let i = 0; i < rocketCount; i++) {
-            let leftRoadCount = roadYArray.length;
-            let roadIndex = Util.getRandomInt(0, leftRoadCount);
-            let roadY = roadYArray[roadIndex];
-            let fireRocketNode = appContext.poolManager.get(PoolEnum.FIRE_ROCKET, rocketPrefab);
-            if (!fireRocketNode) continue;
-            let x = userX + 1500;
-            fireRocketNode.x = x;
-            fireRocketNode.y = 2;
-            fireRocketNode.zIndex = -roadY;
-            this._gameRoot.addChild(fireRocketNode);
-            let fireRocket = fireRocketNode.getComponent(FireRocket);
-            if (!fireRocket) continue;
-            fireRocket.bindData(roadY);
-            roadYArray.splice(roadIndex, 1);
-        }
+
     }
 
     public spawnLandEffect(pos: cc.Vec2, roadY: number): void {

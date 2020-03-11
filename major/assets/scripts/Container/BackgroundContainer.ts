@@ -7,7 +7,7 @@ import { Background } from "./Effect/Background";
  * @Author: XiongZhiCheng 
  * @Date: 2020-03-05 23:43:29 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-06 00:06:36
+ * @Last Modified time: 2020-03-08 23:51:10
  */
 
 const { ccclass, property } = cc._decorator;
@@ -40,7 +40,8 @@ export class BackgroundContainer extends cc.Component implements IContainer {
         let bgSprite = background.addComponent(cc.Sprite);
         bgSprite.spriteFrame = bgFrame;
         bgSprite.type = cc.Sprite.Type.TILED;
-        background.position = cc.v2(0, 0);
+        background.position = cc.v2(0, -1000);
+        background.anchorY = 0;
         background.height = roadLength;
         this.node.addChild(background);
     }

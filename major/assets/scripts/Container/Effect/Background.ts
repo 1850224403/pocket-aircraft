@@ -1,11 +1,10 @@
 import { SettlementPanel } from "../../ui/panel/SettlementPanel";
-import { LogUtil } from "../../util/LogUtil";
 
 /*
  * @Author: XiongZhiCheng 
  * @Date: 2020-03-06 00:03:14 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-08 23:51:18
+ * @Last Modified time: 2020-03-09 00:35:24
  */
 
 const { ccclass, property } = cc._decorator;
@@ -19,7 +18,6 @@ export class Background extends cc.Component {
     }
     public updateSelf(dt: number): void {
         this.node.y -= 5;
-        LogUtil.log(this.node.y, this._length);
         if (this.node.y <= - this._length + 1000) {
             appContext.uiManager.showUI(SettlementPanel);
         }

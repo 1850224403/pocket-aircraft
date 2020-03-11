@@ -6,6 +6,7 @@ import { GameSpawner } from "../game/GameSpawner";
 import { CameraManager } from "../manager/CameraManager";
 import { HallPanel } from "../ui/panel/HallPanel";
 import { ShockManager } from "../manager/ShockManager";
+import { BulletManager } from "../manager/BulletManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -54,6 +55,11 @@ export class GameContext extends cc.Component {
         return this._shockManager;
     }
 
+    private _bulletManager: BulletManager = null;
+    public get bulletManager(): BulletManager {
+        return this._bulletManager;
+    }
+
     public onLoad(): void {
         window.gameContext = this;
         cc.director.getCollisionManager().enabled = true;
@@ -68,6 +74,7 @@ export class GameContext extends cc.Component {
         // this._shockManager = new ShockManager();
         this._mapManager = new MapManager();
         this._roleManager = new RoleManager();
+        this._bulletManager = new BulletManager();
         appContext.uiManager.showUI(HallPanel);
     }
 

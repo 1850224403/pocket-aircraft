@@ -8,7 +8,7 @@ import { AudioEnum } from "../const/AudioEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:39:32 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-05 00:44:09
+ * @Last Modified time: 2020-03-09 00:38:06
  */
 export class GameManager {
 
@@ -28,6 +28,7 @@ export class GameManager {
         // if (!levelData) return;
         // battleData.levelData = levelData;
 
+        gameContext.bulletManager.init();
         gameContext.mapManager.init();
         gameContext.roleManager.init();
         gameContext.cameraManager.init();

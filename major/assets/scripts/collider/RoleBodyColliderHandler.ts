@@ -1,15 +1,10 @@
 import { RoleData } from "../data/RoleData";
-import { CollisionTagEnum } from "../const/CollisionTagEnum";
-import { Item } from "../entity/Item";
-import { FireRocket } from "../entity/FireRocket";
-import { RoleAnim } from "../animation/RoleAnim";
-import { AudioEnum } from "../const/AudioEnum";
 
 /*
  * @Author: FeiFan Chen 
  * @Date: 2020-01-08 09:25:39 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-05 00:04:50
+ * @Last Modified time: 2020-03-09 00:33:32
  */
 const { ccclass, property } = cc._decorator;
 

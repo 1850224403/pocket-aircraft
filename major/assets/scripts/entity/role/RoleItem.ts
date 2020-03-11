@@ -1,13 +1,12 @@
 import { ItemEnum } from "../../const/ItemEnum";
 import { NitrogenEnum } from "../../const/NitrogenEnum";
 import { RoleData } from "../../data/RoleData";
-import { Nitrogen } from "../Nitrogen";
 
 /*
  * @Author: FeiFan Chen 
  * @Date: 2020-02-07 13:47:46 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-02-17 19:14:43
+ * @Last Modified time: 2020-03-09 00:35:36
  */
 const { ccclass, property } = cc._decorator;
 
@@ -16,12 +15,6 @@ const INVINCIBLE_INTERVAL: number = 3;
 
 @ccclass
 export class RoleItem extends cc.Component {
-
-    @property({
-        displayName: '氮气',
-        type: Nitrogen
-    })
-    private nitrogen: Nitrogen = null;
 
     @property({
         displayName: '护盾',
@@ -48,7 +41,6 @@ export class RoleItem extends cc.Component {
         if (!item) return;
         switch (item.type) {
             case ItemEnum.NITROGEN:
-                this.nitrogen.openNitrogen(NitrogenEnum.HIGH);
                 break;
 
             case ItemEnum.ROCKET:
@@ -71,11 +63,6 @@ export class RoleItem extends cc.Component {
     }
 
     private useRocket(): void {
-        let pos = this._data.pos.clone();
-        let roadY = this._data.roadY;
-        let roadNo = gameContext.mapManager.getRoadNo(roadY);
-        let id = this._data.id;
-        gameContext.gameSpawner.spawnFireRocket(pos.x, id, roadNo);
     }
 
     private updateInvincible(dt: number): void {

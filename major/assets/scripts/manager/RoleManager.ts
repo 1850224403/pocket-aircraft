@@ -13,7 +13,7 @@ import { UpgradeEnum } from "../const/UpgradeEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:52:51 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-06 00:25:53
+ * @Last Modified time: 2020-03-11 23:15:18
  */
 export class RoleManager {
 
@@ -73,8 +73,6 @@ export class RoleManager {
         // 初始化玩家数据
         let roleData = new RoleData();
         roleData.id = 1;
-        roleData.maxA = 24;
-        roleData.roadY = 28;
         roleData.rolePropertyLevel = userStorage.propertyLevel;
         let x = 0;
         let y = 0;

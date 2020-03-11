@@ -1,8 +1,8 @@
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:37:30 
- * @Last Modified by: chenfeifan
- * @Last Modified time: 2020-02-10 18:18:41
+ * @Last Modified by: XiongZhiCheng
+ * @Last Modified time: 2020-03-09 00:25:38
  */
 export const enum PoolEnum {
 
@@ -32,6 +32,8 @@ export const enum PoolEnum {
 
     PLAYER_ARROW = 'playerArrow',
 
-    LAND = 'land'
+    LAND = 'land',
+
+    BULLET = 'bullet',
 
 }

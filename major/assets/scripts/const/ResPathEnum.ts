@@ -2,7 +2,7 @@
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:29:52 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-05 00:16:49
+ * @Last Modified time: 2020-03-09 00:34:15
  */
 export const enum PrefabPathEnum {
 
@@ -22,8 +22,6 @@ export const enum PrefabPathEnum {
 
     COIN = 'prefab/entity/Coin',
 
-    FIRE_ROCKET = 'prefab/entity/item/FireRocket',
-
     MAP_PROGRESS_EFFECT = 'prefab/entity/MapProgressEffect',
 
     SAND = 'prefab/entity/roadBlock/Sand',
@@ -32,7 +30,9 @@ export const enum PrefabPathEnum {
 
     PLAYER_ARROW = 'prefab/entity/PlayerArrow',
 
-    LAND = 'prefab/effect/Land'
+    LAND = 'prefab/effect/Land',
+
+    BULLET = 'prefab/entity/bullet/Bullet',
 
 }
 

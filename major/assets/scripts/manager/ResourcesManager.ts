@@ -1,12 +1,12 @@
 import { LogUtil } from "../util/LogUtil";
-import { PrefabPathEnum, FramePathEnum, SpinePathEnum } from "../const/ResPathEnum";
+import { PrefabPathEnum, FramePathEnum } from "../const/ResPathEnum";
 
 /*
  * @Author: FeiFan Chen
  * @Date: 2019-11-26 10:01:12
  * @Description: 资源管理
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-05 00:16:40
+ * @Last Modified time: 2020-03-11 00:31:32
  */
 export class ResourcesManager {
 
@@ -27,10 +27,11 @@ export class ResourcesManager {
 
             let prefabPaths = [
                 PrefabPathEnum.ROLE,
+                PrefabPathEnum.ENEMY,
                 PrefabPathEnum.HALL_PANEL,
                 PrefabPathEnum.COIN,
-                PrefabPathEnum.FIRE_ROCKET,
                 PrefabPathEnum.EXPLOSION,
+                PrefabPathEnum.BULLET + '01',
             ];
             let framePaths = [
                 FramePathEnum.BACKGROUND + '1',
