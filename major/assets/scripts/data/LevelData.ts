@@ -1,4 +1,5 @@
 import { AIConfigData } from "./AIConfigData";
+import { EnemyData } from "./EnemyData";
 
 /*
  * @Author: FeiFan Chen 
@@ -13,6 +14,9 @@ export class LevelData {
 
     /** 圈数 */
     public roundCount: number = 0;
+
+    /**敌人 */
+    public enemyList: EnemyData[] = [];
 
     /** ai配置数据 */
     public aiConfig: AIConfigData = null;

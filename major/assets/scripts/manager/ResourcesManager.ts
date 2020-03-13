@@ -6,7 +6,7 @@ import { PrefabPathEnum, FramePathEnum } from "../const/ResPathEnum";
  * @Date: 2019-11-26 10:01:12
  * @Description: 资源管理
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-12 00:21:36
+ * @Last Modified time: 2020-03-13 00:39:29
  */
 export class ResourcesManager {
 
@@ -27,11 +27,27 @@ export class ResourcesManager {
 
             let prefabPaths = [
                 PrefabPathEnum.ROLE,
-                PrefabPathEnum.ENEMY + '01',
+                PrefabPathEnum.ENEMY,
                 PrefabPathEnum.BULLET + '01',
                 PrefabPathEnum.COIN,
             ];
             let framePaths = [
+                FramePathEnum.ENEMY + '01',
+                FramePathEnum.ENEMY + '02',
+                FramePathEnum.ENEMY + '03',
+                FramePathEnum.ENEMY + '04',
+                FramePathEnum.ENEMY + '05',
+                FramePathEnum.ENEMY + '06',
+                FramePathEnum.ENEMY + '07',
+                FramePathEnum.ENEMY + '08',
+                FramePathEnum.ENEMY + '09',
+                FramePathEnum.ENEMY + '10',
+                FramePathEnum.ENEMY + '11',
+                FramePathEnum.ENEMY + '12',
+                FramePathEnum.ENEMY + '13',
+                FramePathEnum.ENEMY + '14',
+                FramePathEnum.ENEMY + '15',
+                FramePathEnum.ENEMY + '16',
                 FramePathEnum.BACKGROUND + '1',
                 FramePathEnum.BACKGROUND + '2',
                 FramePathEnum.BACKGROUND + '3',

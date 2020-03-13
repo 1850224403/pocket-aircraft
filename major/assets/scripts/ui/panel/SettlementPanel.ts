@@ -1,14 +1,14 @@
+import { BaseUI } from "../BaseUI";
+import { PrefabPathEnum, FramePathEnum } from "../../const/ResPathEnum";
+import { HallPanel } from "./HallPanel";
+import { GamePanel } from "./GamePanel";
 /*
  * @Author: zhicheng xiong 
  * @Date: 2020-01-04 10:41:27 
  * @Last Modified by: XiongZhiCheng
  * @Last Modified time: 2020-03-12 00:22:15
  */
-import { BaseUI } from "../BaseUI";
-import { PrefabPathEnum, FramePathEnum } from "../../const/ResPathEnum";
-import { HallPanel } from "./HallPanel";
-import { GamePanel } from "./GamePanel";
-import { CoinsAward } from "../widget/CoinsAward";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass

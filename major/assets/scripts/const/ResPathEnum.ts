@@ -2,7 +2,7 @@
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:29:52 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-12 00:18:44
+ * @Last Modified time: 2020-03-13 00:37:20
  */
 export const enum PrefabPathEnum {
 
@@ -30,4 +30,5 @@ export const enum FramePathEnum {
 
     PIC_NUMBER = 'texture/picNumber/pic_',
 
+    ENEMY = 'texture/role/enemy/enemy',
 }

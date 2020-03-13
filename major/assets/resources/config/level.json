@@ -2,6 +2,12 @@
     {
         "id": 1,
         "roundCount": 1,
+        "enemyList": [
+            {
+                "type": 1,
+                "count": 5
+            }
+        ],
         "aiConfig": {
             "maxSpeed": 630,
             "minSpeed": 550,

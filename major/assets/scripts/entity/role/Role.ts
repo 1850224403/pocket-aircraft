@@ -52,6 +52,7 @@ export class Role extends cc.Component {
     }
 
     public updateSelf(dt: number): void {
+        if (!this._data) return;
         if (this._data.isPlayer) {
             this._timer += dt;
             if (this._timer > FIREDELAY) {

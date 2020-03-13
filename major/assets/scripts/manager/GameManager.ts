@@ -8,7 +8,7 @@ import { AudioEnum } from "../const/AudioEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:39:32 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-09 00:38:06
+ * @Last Modified time: 2020-03-13 23:05:47
  */
 export class GameManager {
 
@@ -31,6 +31,7 @@ export class GameManager {
         gameContext.bulletManager.init();
         gameContext.mapManager.init();
         gameContext.roleManager.init();
+        gameContext.enemyManager.init();
         gameContext.cameraManager.init();
     }
 
@@ -60,9 +61,11 @@ export class GameManager {
     public updateSelf(dt: number): void {
         switch (this._state) {
             case GameStateEnum.IDEL:
+                gameContext.enemyManager.updateSelf(dt);
                 break;
 
             case GameStateEnum.READY:
+                gameContext.enemyManager.updateSelf(dt);
 
                 break;
 
@@ -73,6 +76,7 @@ export class GameManager {
             case GameStateEnum.PLAY:
                 gameContext.mapManager.updateSelf(dt);
                 gameContext.roleManager.updateSelf(dt);
+                gameContext.enemyManager.updateSelf(dt);
                 break;
 
             case GameStateEnum.END:

@@ -1,5 +1,5 @@
 import { PoolEnum } from "../const/PoolEnum";
-import { LogUtil } from "../util/LogUtil";
+import { TagEnum } from "../const/TagEnum";
 
 const { ccclass, property } = cc._decorator;
 
@@ -14,9 +14,8 @@ export class Bullet extends cc.Component {
     }
 
     public onCollisionEnter(other: cc.Collider, self: cc.Collider): void {
-        if (other.tag === 5) {
-            LogUtil.log('打到');
-            other.node.parent.destroy();
+        if (other.tag === TagEnum.ENEMY) {
+            other.node.destroy();
             this.destroySelf();
         }
 

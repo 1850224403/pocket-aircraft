@@ -7,6 +7,7 @@ import { CameraManager } from "../manager/CameraManager";
 import { HallPanel } from "../ui/panel/HallPanel";
 import { ShockManager } from "../manager/ShockManager";
 import { BulletManager } from "../manager/BulletManager";
+import { EnemyManager } from "../manager/EnemyManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -40,6 +41,11 @@ export class GameContext extends cc.Component {
         return this._roleManager;
     }
 
+    private _enemyManager: EnemyManager = null;
+    public get enemyManager(): EnemyManager {
+        return this._enemyManager;
+    }
+
     private _gameSpawner: GameSpawner = null;
     public get gameSpawner(): GameSpawner {
         return this._gameSpawner;
@@ -71,6 +77,7 @@ export class GameContext extends cc.Component {
         this._cameraManager = new CameraManager()
         this._mapManager = new MapManager();
         this._roleManager = new RoleManager();
+        this._enemyManager = new EnemyManager();
         this._bulletManager = new BulletManager();
 
         appContext.uiManager.showUI(HallPanel);
