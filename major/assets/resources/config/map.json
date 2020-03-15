@@ -1,12 +1,10 @@
 [
-        {
-            "id": 1,
-            "roadLength": 10000,
-            "enemyList": [
-                {
-                    "type": 1,
-                    "count": 5
-                }
-            ]
-        }
+    {
+        "id": 1,
+        "roadLength": 5000
+    },
+    {
+        "id": 2,
+        "roadLength": 6000
+    }
 ]

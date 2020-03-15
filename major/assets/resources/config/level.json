@@ -18,6 +18,16 @@
     {
         "id": 2,
         "roundCount": 1,
+        "enemyList": [
+            {
+                "type": 1,
+                "count": 5
+            },
+            {
+                "type": 2,
+                "count": 5
+            }
+        ],
         "aiConfig": {
             "maxSpeed": 640,
             "minSpeed": 560,
