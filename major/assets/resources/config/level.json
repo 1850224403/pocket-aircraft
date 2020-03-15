@@ -1,378 +1,83 @@
 [
     {
         "id": 1,
-        "roundCount": 1,
         "enemyList": [
             {
                 "type": 1,
-                "count": 5
+                "count": 10
             }
-        ],
-        "aiConfig": {
-            "maxSpeed": 630,
-            "minSpeed": 550,
-            "maxAcceleratedSpeed": 4.0,
-            "minAcceleratedSpeed": 2.4
-        }
+        ]
     },
     {
         "id": 2,
-        "roundCount": 1,
         "enemyList": [
             {
                 "type": 1,
-                "count": 5
+                "count": 7
             },
             {
                 "type": 2,
-                "count": 5
+                "count": 8
             }
-        ],
-        "aiConfig": {
-            "maxSpeed": 640,
-            "minSpeed": 560,
-            "maxAcceleratedSpeed": 4.4,
-            "minAcceleratedSpeed": 2.8
-        }
+        ]
     },
     {
         "id": 3,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 660,
-            "minSpeed": 580,
-            "maxAcceleratedSpeed": 4.8,
-            "minAcceleratedSpeed": 3.2
-        }
+        "enemyList": [
+            {
+                "type": 1,
+                "count": 6
+            },
+            {
+                "type": 2,
+                "count": 7
+            },
+            {
+                "type": 3,
+                "count": 8
+            }
+        ]
     },
     {
         "id": 4,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 650,
-            "minSpeed": 570,
-            "maxAcceleratedSpeed": 4.4,
-            "minAcceleratedSpeed": 2.8
-        }
+        "enemyList": [
+            {
+                "type": 1,
+                "count": 7
+            },
+            {
+                "type": 2,
+                "count": 10
+            },
+            {
+                "type": 3,
+                "count": 8
+            },
+            {
+                "type": 4,
+                "count": 8
+            }
+        ]
     },
     {
         "id": 5,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 660,
-            "minSpeed": 580,
-            "maxAcceleratedSpeed": 4.8,
-            "minAcceleratedSpeed": 3.2
-        }
-    },
-    {
-        "id": 6,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 680,
-            "minSpeed": 600,
-            "maxAcceleratedSpeed": 5.2,
-            "minAcceleratedSpeed": 3.6
-        }
-    },
-    {
-        "id": 7,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 670,
-            "minSpeed": 590,
-            "maxAcceleratedSpeed": 4.8,
-            "minAcceleratedSpeed": 3.2
-        }
-    },
-    {
-        "id": 8,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 680,
-            "minSpeed": 600,
-            "maxAcceleratedSpeed": 5.2,
-            "minAcceleratedSpeed": 3.6
-        }
-    },
-    {
-        "id": 9,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 700,
-            "minSpeed": 620,
-            "maxAcceleratedSpeed": 5.6,
-            "minAcceleratedSpeed": 4.0
-        }
-    },
-    {
-        "id": 10,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 690,
-            "minSpeed": 610,
-            "maxAcceleratedSpeed": 5.2,
-            "minAcceleratedSpeed": 3.6
-        }
-    },
-    {
-        "id": 11,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 700,
-            "minSpeed": 620,
-            "maxAcceleratedSpeed": 5.6,
-            "minAcceleratedSpeed": 4.0
-        }
-    },
-    {
-        "id": 12,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 720,
-            "minSpeed": 640,
-            "maxAcceleratedSpeed": 6.0,
-            "minAcceleratedSpeed": 4.4
-        }
-    },
-    {
-        "id": 13,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 710,
-            "minSpeed": 630,
-            "maxAcceleratedSpeed": 5.6,
-            "minAcceleratedSpeed": 4.0
-        }
-    },
-    {
-        "id": 14,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 720,
-            "minSpeed": 640,
-            "maxAcceleratedSpeed": 6.0,
-            "minAcceleratedSpeed": 4.4
-        }
-    },
-    {
-        "id": 15,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 740,
-            "minSpeed": 660,
-            "maxAcceleratedSpeed": 6.4,
-            "minAcceleratedSpeed": 4.8
-        }
-    },
-    {
-        "id": 16,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 730,
-            "minSpeed": 650,
-            "maxAcceleratedSpeed": 6.0,
-            "minAcceleratedSpeed": 4.4
-        }
-    },
-    {
-        "id": 17,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 740,
-            "minSpeed": 660,
-            "maxAcceleratedSpeed": 6.4,
-            "minAcceleratedSpeed": 4.8
-        }
-    },
-    {
-        "id": 18,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 760,
-            "minSpeed": 680,
-            "maxAcceleratedSpeed": 6.8,
-            "minAcceleratedSpeed": 5.2
-        }
-    },
-    {
-        "id": 19,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 750,
-            "minSpeed": 670,
-            "maxAcceleratedSpeed": 6.4,
-            "minAcceleratedSpeed": 4.8
-        }
-    },
-    {
-        "id": 20,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 760,
-            "minSpeed": 680,
-            "maxAcceleratedSpeed": 6.8,
-            "minAcceleratedSpeed": 5.2
-        }
-    },
-    {
-        "id": 21,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 780,
-            "minSpeed": 700,
-            "maxAcceleratedSpeed": 7.2,
-            "minAcceleratedSpeed": 5.6
-        }
-    },
-    {
-        "id": 22,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 770,
-            "minSpeed": 690,
-            "maxAcceleratedSpeed": 6.8,
-            "minAcceleratedSpeed": 5.2
-        }
-    },
-    {
-        "id": 23,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 780,
-            "minSpeed": 700,
-            "maxAcceleratedSpeed": 7.2,
-            "minAcceleratedSpeed": 5.6
-        }
-    },
-    {
-        "id": 24,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 800,
-            "minSpeed": 720,
-            "maxAcceleratedSpeed": 7.6,
-            "minAcceleratedSpeed": 6.0
-        }
-    },
-    {
-        "id": 25,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 790,
-            "minSpeed": 710,
-            "maxAcceleratedSpeed": 7.2,
-            "minAcceleratedSpeed": 5.6
-        }
-    },
-    {
-        "id": 26,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 800,
-            "minSpeed": 720,
-            "maxAcceleratedSpeed": 7.6,
-            "minAcceleratedSpeed": 6.0
-        }
-    },
-    {
-        "id": 27,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 820,
-            "minSpeed": 740,
-            "maxAcceleratedSpeed": 8.0,
-            "minAcceleratedSpeed": 6.4
-        }
-    },
-    {
-        "id": 28,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 810,
-            "minSpeed": 730,
-            "maxAcceleratedSpeed": 7.6,
-            "minAcceleratedSpeed": 6.0
-        }
-    },
-    {
-        "id": 29,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 820,
-            "minSpeed": 740,
-            "maxAcceleratedSpeed": 8.0,
-            "minAcceleratedSpeed": 6.4
-        }
-    },
-    {
-        "id": 30,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 840,
-            "minSpeed": 760,
-            "maxAcceleratedSpeed": 8.4,
-            "minAcceleratedSpeed": 6.8
-        }
-    },
-    {
-        "id": 31,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 830,
-            "minSpeed": 750,
-            "maxAcceleratedSpeed": 8.0,
-            "minAcceleratedSpeed": 6.4
-        }
-    },
-    {
-        "id": 32,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 840,
-            "minSpeed": 760,
-            "maxAcceleratedSpeed": 8.4,
-            "minAcceleratedSpeed": 6.8
-        }
-    },
-    {
-        "id": 33,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 860,
-            "minSpeed": 780,
-            "maxAcceleratedSpeed": 8.8,
-            "minAcceleratedSpeed": 7.2
-        }
-    },
-    {
-        "id": 34,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 850,
-            "minSpeed": 770,
-            "maxAcceleratedSpeed": 8.4,
-            "minAcceleratedSpeed": 6.8
-        }
-    },
-    {
-        "id": 35,
-        "roundCount": 1,
-        "aiConfig": {
-            "maxSpeed": 860,
-            "minSpeed": 780,
-            "maxAcceleratedSpeed": 8.8,
-            "minAcceleratedSpeed": 7.2
-        }
-    },
-    {
-        "id": 36,
-        "roundCount": 2,
-        "aiConfig": {
-            "maxSpeed": 880,
-            "minSpeed": 800,
-            "maxAcceleratedSpeed": 9.2,
-            "minAcceleratedSpeed": 7.6
-        }
+        "enemyList": [
+            {
+                "type": 2,
+                "count": 10
+            },
+            {
+                "type": 3,
+                "count": 8
+            },
+            {
+                "type": 4,
+                "count": 8
+            },
+            {
+                "type": 5,
+                "count": 10
+            }
+        ]
     }
 ]

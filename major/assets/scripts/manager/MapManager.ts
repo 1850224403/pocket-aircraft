@@ -9,7 +9,7 @@ import { NodeNameEnum } from "../const/NodeNameEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:36:30 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-06 00:07:40
+ * @Last Modified time: 2020-03-16 00:46:32
  */
 const { ccclass, property } = cc._decorator;
 
@@ -32,8 +32,7 @@ export class MapManager {
         }
 
         let currentLevel = appContext.userDataStorage.currentLevel;
-        let a = Math.ceil(currentLevel / 3);
-        let id = a;
+        let id = currentLevel;
         let mapMap = appContext.configManager.getMapMap();
         if (!mapMap) return;
         let mapData = mapMap.get(id);
