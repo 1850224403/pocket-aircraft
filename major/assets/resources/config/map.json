@@ -1,0 +1,12 @@
+[
+        {
+            "id": 1,
+            "roadLength": 10000,
+            "enemyList": [
+                {
+                    "type": 1,
+                    "count": 5
+                }
+            ]
+        }
+]
