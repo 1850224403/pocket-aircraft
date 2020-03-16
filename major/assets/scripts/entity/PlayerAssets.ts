@@ -3,8 +3,8 @@ import { ImageNumber } from "./ImageNumber";
 /*
  * @Author: zhicheng xiong 
  * @Date: 2020-01-03 19:14:52 
- * @Last Modified by: zhicheng xiong
- * @Last Modified time: 2020-01-19 17:06:44
+ * @Last Modified by: XiongZhiCheng
+ * @Last Modified time: 2020-03-15 16:45:54
  */
 
 const { ccclass, property } = cc._decorator;
@@ -13,7 +13,7 @@ const { ccclass, property } = cc._decorator;
 export class PlayerAssets extends cc.Component {
 
     @property({
-        displayName: '数字',
+        displayName: '金币',
         type: ImageNumber,
     })
     private coinNum: ImageNumber = null;
@@ -31,23 +31,24 @@ export class PlayerAssets extends cc.Component {
     public onLoad(): void {
         this._coins = appContext.userDataStorage.coin;
         this.coinNum.value = this._coins;
-        if (!this.diamondNum) return;
         this._diamonds = appContext.userDataStorage.diamond;
         this.diamondNum.value = this._diamonds;
     }
 
     public update(dt: number): void {
+        this.refreshAssets();
+    }
+
+    private refreshAssets(): void {
         let curTotalCoins = appContext.userDataStorage.coin;
         let curTotalDiamands = appContext.userDataStorage.diamond;
         if (this._coins !== curTotalCoins) {
             this._coins = curTotalCoins;
             this.coinNum.value = this._coins;
         }
-
-        if (this.diamondNum && this._diamonds !== curTotalDiamands) {
+        if (this._diamonds !== curTotalDiamands) {
             this._diamonds = curTotalDiamands;
             this.diamondNum.value = this._diamonds;
         }
-
     }
 }

@@ -15,7 +15,7 @@ import { GroupEnum } from "../const/GroupEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-27 09:12:43 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-13 23:09:37
+ * @Last Modified time: 2020-03-15 17:15:19
  */
 export class GameSpawner {
 
@@ -63,7 +63,6 @@ export class GameSpawner {
         enemyNode.group = GroupEnum.ENEMY;
         this._gameRoot.addChild(enemyNode);
         let enemyComp = enemyNode.addComponent(Enemy);
-        LogUtil.log(enemyNode.width, enemyNode.height, colliderComp.size, colliderComp.tag);
         return enemyComp;
     }
 

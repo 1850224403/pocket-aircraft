@@ -1,15 +1,12 @@
 import { Enemy } from "../entity/Enemy";
 import { AI } from "../entity/ai/AI";
 import { EnemyData } from "../data/EnemyData";
-import { FramePathEnum } from "../const/ResPathEnum";
-import { TagEnum } from "../const/TagEnum";
-import { Util } from "../util/Util";
 
 /*
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:52:51 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-13 23:08:24
+ * @Last Modified time: 2020-03-16 00:50:19
  */
 export class EnemyManager {
 

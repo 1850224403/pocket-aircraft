@@ -37,7 +37,7 @@ export class MapProgressArrow extends cc.Component {
         precent = cc.misc.clamp01(precent);
         this.node.x = cc.misc.lerp(this._startX, this._endX, precent);
         if (this._data.isPlayer && precent >= 1) {
-            gameContext.gameManager.gameOver();
+            gameContext.gameManager.gameOver(true);
         }
     }
 }

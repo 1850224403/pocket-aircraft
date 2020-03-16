@@ -10,6 +10,10 @@ export class EnemyData {
     /** 编号 */
     public type: number = 0;
 
+    /**数量 */
     public count: number = 1;
+
+    /**hp */
+    public hp: number = 1;
 
 }
