@@ -4,7 +4,9 @@
         "enemyList": [
             {
                 "type": 1,
-                "count": 10
+                "count": 10,
+                "hp": 1,
+                "moveWay": 0
             }
         ]
     },
@@ -13,11 +15,15 @@
         "enemyList": [
             {
                 "type": 1,
-                "count": 7
+                "count": 7,
+                "hp": 1,
+                "moveWay": 0
             },
             {
                 "type": 2,
-                "count": 8
+                "count": 8,
+                "hp": 1,
+                "moveWay": 0
             }
         ]
     },
@@ -26,15 +32,21 @@
         "enemyList": [
             {
                 "type": 1,
-                "count": 6
+                "count": 6,
+                "hp": 1,
+                "moveWay": 0
             },
             {
                 "type": 2,
-                "count": 7
+                "count": 7,
+                "hp": 1,
+                "moveWay": 0
             },
             {
                 "type": 3,
-                "count": 8
+                "count": 8,
+                "hp": 2,
+                "moveWay": 1
             }
         ]
     },
@@ -43,19 +55,27 @@
         "enemyList": [
             {
                 "type": 1,
-                "count": 7
+                "count": 7,
+                "hp": 1,
+                "moveWay": 0
             },
             {
                 "type": 2,
-                "count": 10
+                "count": 10,
+                "hp": 1,
+                "moveWay": 0
             },
             {
                 "type": 3,
-                "count": 8
+                "count": 8,
+                "hp": 2,
+                "moveWay": 1
             },
             {
                 "type": 4,
-                "count": 8
+                "count": 8,
+                "hp": 2,
+                "moveWay": 1
             }
         ]
     },
@@ -64,19 +84,27 @@
         "enemyList": [
             {
                 "type": 2,
-                "count": 10
+                "count": 10,
+                "hp": 1,
+                "moveWay": 0
             },
             {
                 "type": 3,
-                "count": 8
+                "count": 8,
+                "hp": 2,
+                "moveWay": 1
             },
             {
                 "type": 4,
-                "count": 8
+                "count": 8,
+                "hp": 2,
+                "moveWay": 1
             },
             {
                 "type": 5,
-                "count": 10
+                "count": 10,
+                "hp": 5,
+                "moveWay": 2
             }
         ]
     }

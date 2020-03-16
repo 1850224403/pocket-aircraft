@@ -5,7 +5,7 @@ import { TagEnum } from "../const/TagEnum";
  * @Author: FeiFan Chen 
  * @Date: 2020-01-19 16:55:30 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-13 23:10:38
+ * @Last Modified time: 2020-03-17 07:15:31
  */
 const { ccclass, property } = cc._decorator;
 
@@ -41,14 +41,23 @@ export class Enemy extends cc.Component {
             return;
         }
         this._data = data;
+        if (this._data.moveWay === 0) {
+            this.node.rotation = -90;
+        }
+        this.move();
+    }
+
+    private move(): void {
+        let action = gameContext.moveManager.getMoveWay(this._data.type);
+        this.node.runAction(action);
     }
 
     public touchStart(): void {
     }
 
     public updateSelf(dt: number): void {
-        if (!this._data) return;
-        this.node.y -= 3;
+        // if (!this._data) return;
+        // this.node.y -= 3;
     }
 
     private fire(): void {
