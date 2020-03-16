@@ -6,7 +6,7 @@ import { GamePanel } from "./GamePanel";
  * @Author: zhicheng xiong 
  * @Date: 2020-01-04 10:41:27 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-12 00:22:15
+ * @Last Modified time: 2020-03-15 17:06:00
  */
 
 const { ccclass, property } = cc._decorator;
@@ -32,17 +32,24 @@ export class SettlementPanel extends BaseUI {
     })
     private backBtn: cc.Node = null;
 
+    private _isWin: boolean = false;
 
     public static url: string = PrefabPathEnum.SETTLEMENT_PANEL;
 
-    public onShow(curRanking: number): void {
+    public onShow(win: boolean): void {
         gameContext.gameManager.gamePause();
+        this._isWin = win;
     }
 
     public passLevel(): void {
         appContext.userDataStorage.passLevel();
         gameContext.gameManager.restart();
         appContext.uiManager.showUI(GamePanel);
+    }
+
+    public refreshBtn(): void {
+        this.nextLevel.active = this._isWin;
+        this.reset.active = !this._isWin;
     }
 
     public resetGame(): void {

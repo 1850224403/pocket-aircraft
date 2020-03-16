@@ -8,6 +8,7 @@ import { HallPanel } from "../ui/panel/HallPanel";
 import { ShockManager } from "../manager/ShockManager";
 import { BulletManager } from "../manager/BulletManager";
 import { EnemyManager } from "../manager/EnemyManager";
+import { MoveManager } from "../move/MoveManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -66,6 +67,11 @@ export class GameContext extends cc.Component {
         return this._bulletManager;
     }
 
+    private _moveManager: MoveManager = null;
+    public get moveManager(): MoveManager {
+        return this._moveManager;
+    }
+
     public onLoad(): void {
         window.gameContext = this;
         cc.director.getCollisionManager().enabled = true;
@@ -79,6 +85,7 @@ export class GameContext extends cc.Component {
         this._roleManager = new RoleManager();
         this._enemyManager = new EnemyManager();
         this._bulletManager = new BulletManager();
+        this._moveManager = new MoveManager();
 
         appContext.uiManager.showUI(HallPanel);
     }

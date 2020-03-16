@@ -8,7 +8,7 @@ import { AudioEnum } from "../const/AudioEnum";
  * @Author: FeiFan Chen 
  * @Date: 2019-12-26 18:39:32 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-03-13 23:05:47
+ * @Last Modified time: 2020-03-17 06:49:21
  */
 export class GameManager {
 
@@ -29,6 +29,7 @@ export class GameManager {
         // battleData.levelData = levelData;
 
         gameContext.bulletManager.init();
+        gameContext.moveManager.init();
         gameContext.mapManager.init();
         gameContext.roleManager.init();
         gameContext.enemyManager.init();
@@ -112,10 +113,9 @@ export class GameManager {
         }
     }
 
-    public gameOver(): void {
+    public gameOver(win: boolean): void {
         this._state = GameStateEnum.END;
-        let rank = gameContext.roleManager.player.data.ranking;
-        appContext.uiManager.showUI(SettlementPanel, null, rank);
+        appContext.uiManager.showUI(SettlementPanel, null, win);
     }
 
     public clearBattleField(): void {
@@ -132,7 +132,7 @@ export class GameManager {
 
     public restart(): void {
         this.clearBattleField();
-        this.initGame();
+        //this.initGame();
     }
 
 }

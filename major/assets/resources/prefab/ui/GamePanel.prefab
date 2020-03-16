@@ -30,11 +30,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 26
+        "__id__": 32
       }
     ],
     "_prefab": {
-      "__id__": 27
+      "__id__": 33
     },
     "_opacity": 255,
     "_color": {
@@ -575,7 +575,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Assets",
+    "_name": "PlayerAssets",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -583,16 +583,19 @@
     "_children": [
       {
         "__id__": 18
+      },
+      {
+        "__id__": 24
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 24
+        "__id__": 30
       }
     ],
     "_prefab": {
-      "__id__": 25
+      "__id__": 31
     },
     "_opacity": 255,
     "_color": {
@@ -609,8 +612,8 @@
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
+      "x": 0.5,
+      "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
@@ -643,7 +646,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Coins",
+    "_name": "TotalCoins",
     "_objFlags": 0,
     "_parent": {
       "__id__": 17
@@ -672,8 +675,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 42,
-      "height": 43
+      "width": 80,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -684,8 +687,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -58,
-        528,
+        -250,
+        500,
         0,
         0,
         0,
@@ -736,19 +739,19 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 111.23,
-      "height": 56.7
+      "width": 0,
+      "height": 0
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": 0.5,
       "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        30,
+        70,
         0,
         0,
         0,
@@ -791,7 +794,7 @@
     "asset": {
       "__uuid__": "870af688-9926-4caa-a790-4cc8dd19b22b"
     },
-    "fileId": "ddfo3Hp3pA4YJYjR/ut4Po",
+    "fileId": "8eRKFnfANJYYRhNGiR/ZQt",
     "sync": false
   },
   {
@@ -809,9 +812,11 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "4ebf371b-e46f-4871-9d31-84a8dd625806"
+    },
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -832,7 +837,203 @@
     "asset": {
       "__uuid__": "870af688-9926-4caa-a790-4cc8dd19b22b"
     },
-    "fileId": "d0/9Z1t5lBOLKxCZu9miQr",
+    "fileId": "1arZS6Fx5FHauYqeGJTWrO",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "TotalDiamonds",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 17
+    },
+    "_children": [
+      {
+        "__id__": 25
+      }
+    ],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 28
+      }
+    ],
+    "_prefab": {
+      "__id__": 29
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 80,
+      "height": 80
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        100,
+        500,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "DiamondNum",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 24
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 26
+      }
+    ],
+    "_prefab": {
+      "__id__": 27
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        70,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "f3622yw1xdEhLrUjL83wUPU",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 25
+    },
+    "_enabled": true,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "870af688-9926-4caa-a790-4cc8dd19b22b"
+    },
+    "fileId": "95HhhqY1pKUaYrUVb8sl1I",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 24
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "08cbc8a6-c977-47c5-a1ea-96cf499bd55a"
+    },
+    "_type": 0,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "870af688-9926-4caa-a790-4cc8dd19b22b"
+    },
+    "fileId": "d2VPOIZ4dMpoDQjsNLXFRc",
     "sync": false
   },
   {
@@ -846,7 +1047,9 @@
     "coinNum": {
       "__id__": 20
     },
-    "diamondNum": null,
+    "diamondNum": {
+      "__id__": 26
+    },
     "_id": ""
   },
   {
@@ -857,7 +1060,7 @@
     "asset": {
       "__uuid__": "870af688-9926-4caa-a790-4cc8dd19b22b"
     },
-    "fileId": "2fuWqDg8pJmKAMU6xIYBT5",
+    "fileId": "310e0D9qVK14qDpGueJFRn",
     "sync": false
   },
   {

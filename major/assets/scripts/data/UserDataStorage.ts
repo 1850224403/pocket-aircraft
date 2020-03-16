@@ -10,7 +10,7 @@ import { LogUtil } from "../util/LogUtil";
  * @Date: 2019-11-09 13:44:07 
  * @Description: 用户持久化数据 
  * @Last Modified by: XiongZhiCheng
- * @Last Modified time: 2020-02-17 16:01:59
+ * @Last Modified time: 2020-03-15 16:47:44
  */
 const { ccclass, property } = cc._decorator;
 
@@ -63,20 +63,6 @@ export class UserDataStorage {
 
     public get ownSkin(): number[] {
         return UserData.data.otherData.ownSkin;
-    }
-
-    public get isShockOn(): boolean {
-        return UserData.data.otherData.isShockOn;
-    }
-    public set isShockOn(value: boolean) {
-        UserData.data.otherData.isShockOn = value;
-    }
-
-    public get isAudioOn(): boolean {
-        return UserData.data.otherData.isAudioOn;
-    }
-    public set isAudioOn(value: boolean) {
-        UserData.data.otherData.isAudioOn = value;
     }
 
     constructor() {
