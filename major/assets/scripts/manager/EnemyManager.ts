@@ -38,9 +38,10 @@ export class EnemyManager {
         });
 
         this._timer += dt;
-        if (this._timer >= 1) {
+        if (this._timer >= 5) {
             let data = this._enemyDataList.shift();
             data && this.createEnemy(data);
+            this._timer = 0;
         }
     }
 
@@ -59,6 +60,21 @@ export class EnemyManager {
                     if (pos.x < -720) {
                         pos.y += 100;
                         pos.x = -400;
+                    }
+                }
+                break;
+
+            case 1:
+            case 2:
+                pos = cc.v2(-200, 1000);
+                for (let i = 0; i < enemyCount; i++) {
+                    let enemy = gameContext.gameSpawner.spawnEnemy(enemyData, pos);
+                    enemy.bindData(enemyData);
+                    this._enemyList.add(enemy);
+                    pos.x += 80;
+                    if (pos.x > 200) {
+                        pos.y += 100;
+                        pos.x = -200;
                     }
                 }
                 break;

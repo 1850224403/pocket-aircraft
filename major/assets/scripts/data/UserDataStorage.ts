@@ -80,7 +80,7 @@ export class UserDataStorage {
             otherData.ownSkin = [RoleSkinEnum.SKIN_2];
         }
         if (otherData.currentLevel === void 0) {
-            otherData.currentLevel = 1;
+            otherData.currentLevel = 5;
         }
         if (otherData.diamond === void 0) {
             otherData.diamond = 0;
